@@ -15,15 +15,15 @@ jobs:
         id: site
         run: |
           git fetch origin main
-          # Get first new or changed folder under /sites/
-          folder=$(git diff --name-only origin/main...HEAD | grep '^sites/' | cut -d/ -f2 | sort | uniq | head -n 1)
+          # Get first new or changed folder under /Sites/
+          folder=$(git diff --name-only origin/main...HEAD | grep '^Sites/' | cut -d/ -f2 | sort | uniq | head -n 1)
           echo "Detected site folder: $folder"
           echo "folder=$folder" >> $GITHUB_OUTPUT
 
       - name: Fail if no folder found
         run: |
           if [ -z "${{ steps.site.outputs.folder }}" ]; then
-            echo "❌ No site folder detected in /sites/. Did you add one?"
+            echo "❌ No site folder detected in /Sites/. Did you add one?"
             exit 1
           fi
 
@@ -33,23 +33,23 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        working-directory: sites/${{ steps.site.outputs.folder }}
+        working-directory: Sites/${{ steps.site.outputs.folder }}
         run: npm install
 
       - name: Install Vercel CLI
         run: npm install --global vercel
 
       - name: Pull Vercel Environment
-        working-directory: sites/${{ steps.site.outputs.folder }}
+        working-directory: Sites/${{ steps.site.outputs.folder }}
         run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Build the site
-        working-directory: sites/${{ steps.site.outputs.folder }}
+        working-directory: Sites/${{ steps.site.outputs.folder }}
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy to Vercel
         id: deploy
-        working-directory: sites/${{ steps.site.outputs.folder }}
+        working-directory: Sites/${{ steps.site.outputs.folder }}
         run: |
           url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
           echo "Preview URL: $url"
