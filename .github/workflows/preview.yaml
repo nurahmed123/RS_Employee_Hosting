@@ -14,12 +14,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Fetch all branches
+      - name: Fetch base & head branches
         run: |
           git fetch origin ${{ github.base_ref }}:${{ github.base_ref }}
           git fetch origin ${{ github.head_ref }}:${{ github.head_ref }}
 
-      - name: Detect folder inside /Sites/
+      - name: Detect folder inside Sites/
         id: detect
         run: |
           folder=$(git diff --name-only origin/${{ github.base_ref }} origin/${{ github.head_ref }} | grep '^Sites/' | cut -d/ -f2 | sort | uniq | head -n 1)
@@ -29,11 +29,11 @@ jobs:
       - name: Fail if no site folder found
         run: |
           if [ -z "${{ steps.detect.outputs.folder }}" ]; then
-            echo "❌ No folder detected inside /Sites/."
+            echo "❌ No folder detected inside Sites/."
             exit 1
           fi
 
-      - name: Set working directory variable
+      - name: Set SITE_DIR env
         run: echo "SITE_DIR=Sites/${{ steps.detect.outputs.folder }}" >> $GITHUB_ENV
 
       - name: Setup Node.js
@@ -69,7 +69,7 @@ jobs:
           script: |
             const url = "${{ steps.vercel_deploy.outputs.url }}";
             const folder = "${{ steps.detect.outputs.folder }}";
-            const body = `✅ **Preview deployed for** \`/Sites/${folder}\`:\n\n🔗 [View Preview](${url})`;
+            const body = `✅ **Preview deployed for** \`Sites/${folder}\`:\n\n🔗 [View Preview](${url})`;
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
