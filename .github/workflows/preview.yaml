@@ -1,4 +1,4 @@
-name: Vercel Preview Deployment
+name: Deploy Preview to Vercel
 
 on:
   pull_request:
@@ -9,53 +9,49 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout PR code
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Detect Site Folder
         id: detect
         run: |
           folder=$(find Sites -mindepth 1 -maxdepth 1 -type d | head -n 1)
-          echo "Detected folder: $folder"
           echo "site_folder=$folder" >> $GITHUB_OUTPUT
+          echo "Detected site folder: $folder"
 
-      - name: Setup Node.js
+      - name: Install Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: Install dependencies
-        working-directory: ${{ steps.detect.outputs.site_folder }}
-        run: npm install
-
-      - name: Install Vercel CLI
-        run: npm install --global vercel
-
-      - name: Pull Vercel Environment Info
+      - name: Install dependencies (if any)
         working-directory: ${{ steps.detect.outputs.site_folder }}
         run: |
-          vercel pull --yes --environment=preview \
-            --token=ipvzJHgypRYHHIwH8d7lbyBN \
+          if [ -f package.json ]; then
+            npm install || echo "No install needed"
+          else
+            echo "No package.json found, skipping npm install"
+          fi
 
-      - name: Build with Vercel
-        working-directory: ${{ steps.detect.outputs.site_folder }}
-        run: vercel build --token=ipvzJHgypRYHHIwH8d7lbyBN
+      - name: Install Vercel CLI
+        run: npm install -g vercel
 
-      - name: Deploy to Vercel (Preview)
+      - name: Deploy to Vercel
         id: deploy
         working-directory: ${{ steps.detect.outputs.site_folder }}
         run: |
-          url=$(vercel deploy --prebuilt --token=ipvzJHgypRYHHIwH8d7lbyBN)
+          url=$(vercel deploy --token=ipvzJHgypRYHHIwH8d7lbyBN --yes --prod --confirm)
           echo "preview_url=$url" >> $GITHUB_OUTPUT
 
-      - name: Comment Preview URL on PR
+      - name: Comment Preview URL
         uses: actions/github-script@v7
         with:
           script: |
             const url = "${{ steps.deploy.outputs.preview_url }}";
+            const folder = "${{ steps.detect.outputs.site_folder }}";
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `✅ **Vercel Preview Deployed** for \`${{ steps.detect.outputs.site_folder }}\`:\n\n🔗 [View Preview Deployment](${url})`
+              body: `🚀 Preview deployed for \`${folder}\`:\n\n🔗 [View Preview](${url})`
             });
