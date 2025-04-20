@@ -31,15 +31,16 @@ jobs:
       - name: Install Vercel CLI
         run: npm install -g vercel
 
+      - name: Set up Vercel environment variables
+        run: |
+          echo "VERCEL_TOKEN=${{ secrets.VERCEL_TOKEN }}" >> $GITHUB_ENV
+          echo "VERCEL_ORG_ID=${{ secrets.VERCEL_ORG_ID }}" >> $GITHUB_ENV
+          echo "VERCEL_PROJECT_ID=${{ secrets.VERCEL_PROJECT_ID }}" >> $GITHUB_ENV
+
       - name: Pull Vercel Environment Info
         working-directory: ${{ steps.detect.outputs.site_folder }}
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
-          vercel pull --yes --environment=preview \
-            --token=${{ secrets.VERCEL_TOKEN }} \
-            --org-id=${{ secrets.VERCEL_ORG_ID }} \
-            --project-id=${{ secrets.VERCEL_PROJECT_ID }}
+          vercel pull --yes --environment=preview
 
       - name: Build Project
         working-directory: ${{ steps.detect.outputs.site_folder }}
