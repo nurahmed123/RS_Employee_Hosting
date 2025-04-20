@@ -33,14 +33,14 @@ jobs:
 
       - name: Check Vercel Token and Variables
         run: |
-          echo "VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}"
+          echo "TOKEN: ${{ secrets.TOKEN }}"
           echo "VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}"
           echo "VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}"
 
       - name: Pull Vercel Environment Info
         working-directory: ${{ steps.detect.outputs.site_folder }}
         env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          TOKEN: ${{ secrets.TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
         run: |
@@ -48,13 +48,13 @@ jobs:
 
       - name: Build Project
         working-directory: ${{ steps.detect.outputs.site_folder }}
-        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel build --token=${{ secrets.TOKEN }}
 
       - name: Deploy to Vercel
         id: deploy
         working-directory: ${{ steps.detect.outputs.site_folder }}
         run: |
-          url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
+          url=$(vercel deploy --prebuilt --token=${{ secrets.TOKEN }})
           echo "preview_url=$url" >> $GITHUB_OUTPUT
 
       - name: Comment Preview URL on PR
