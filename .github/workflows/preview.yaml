@@ -2,65 +2,70 @@ name: Deploy Vercel Preview on PR
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    paths:
+      - 'Sites/**'
+    types: [opened, synchronize, reopened]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Detect modified folder under /Sites/
-        id: site
+      - name: Detect folder inside /Sites/
+        id: detect
         run: |
           git fetch origin main
           folder=$(git diff --name-only origin/main...HEAD | grep '^Sites/' | cut -d/ -f2 | sort | uniq | head -n 1)
           echo "Detected folder: $folder"
           echo "folder=$folder" >> $GITHUB_OUTPUT
 
-      - name: Fail if no folder found
+      - name: Fail if no site folder found
         run: |
-          if [ -z "${{ steps.site.outputs.folder }}" ]; then
-            echo "❌ No folder found under /Sites/. Exiting."
+          if [ -z "${{ steps.detect.outputs.folder }}" ]; then
+            echo "❌ No folder detected inside /Sites/."
             exit 1
           fi
 
-      - name: Install Node
+      - name: Set working directory variable
+        run: echo "SITE_DIR=Sites/${{ steps.detect.outputs.folder }}" >> $GITHUB_ENV
+
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
       - name: Install dependencies
-        working-directory: Sites/${{ steps.site.outputs.folder }}
+        working-directory: ${{ env.SITE_DIR }}
         run: npm install
 
       - name: Install Vercel CLI
-        run: npm install --global vercel
+        run: npm install -g vercel
 
-      - name: Pull Vercel environment
-        working-directory: Sites/${{ steps.site.outputs.folder }}
+      - name: Pull Vercel environment settings
+        working-directory: ${{ env.SITE_DIR }}
         run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Build the project
-        working-directory: Sites/${{ steps.site.outputs.folder }}
+      - name: Build the site
+        working-directory: ${{ env.SITE_DIR }}
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy to Vercel
-        id: deploy
-        working-directory: Sites/${{ steps.site.outputs.folder }}
+        id: vercel_deploy
+        working-directory: ${{ env.SITE_DIR }}
         run: |
           url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
           echo "url=$url" >> $GITHUB_OUTPUT
 
-      - name: Comment preview link on PR
+      - name: Comment preview URL on PR
         uses: actions/github-script@v7
         with:
           script: |
-            const url = "${{ steps.deploy.outputs.url }}";
-            const folder = "${{ steps.site.outputs.folder }}";
-            const body = `🚀 **Preview ready** for \`/Sites/${folder}\` → [View Preview](${url})`;
+            const url = "${{ steps.vercel_deploy.outputs.url }}";
+            const folder = "${{ steps.detect.outputs.folder }}";
+            const body = `✅ **Preview deployed for** \`/Sites/${folder}\`:\n\n🔗 [View Preview](${url})`;
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
