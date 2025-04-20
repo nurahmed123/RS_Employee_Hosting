@@ -1,57 +1,52 @@
-name: Deploy Preview to Vercel
+name: Vercel Preview Deployment
 
 on:
   pull_request:
     types: [opened, synchronize, reopened]
 
 jobs:
-  preview:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Detect Site Folder
+      - name: Detect modified site folder
         id: detect
         run: |
-          folder=$(find Sites -mindepth 1 -maxdepth 1 -type d | head -n 1)
+          folder=$(find Sites -maxdepth 1 -mindepth 1 -type d | head -n 1)
           echo "site_folder=$folder" >> $GITHUB_OUTPUT
-          echo "Detected site folder: $folder"
 
-      - name: Install Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: Install dependencies (if any)
+      - name: Install dependencies if package.json exists
         working-directory: ${{ steps.detect.outputs.site_folder }}
         run: |
-          if [ -f package.json ]; then
-            npm install || echo "No install needed"
-          else
-            echo "No package.json found, skipping npm install"
+          if [ -f "package.json" ]; then
+            npm install
           fi
 
       - name: Install Vercel CLI
         run: npm install -g vercel
 
-      - name: Deploy to Vercel
+      - name: Deploy to Vercel (generic)
         id: deploy
         working-directory: ${{ steps.detect.outputs.site_folder }}
         run: |
-          url=$(vercel deploy --token=ipvzJHgypRYHHIwH8d7lbyBN --yes --prod --confirm)
+          url=$(vercel --token=ipvzJHgypRYHHIwH8d7lbyBN --yes)
           echo "preview_url=$url" >> $GITHUB_OUTPUT
 
-      - name: Comment Preview URL
+      - name: Comment preview URL on PR
         uses: actions/github-script@v7
         with:
           script: |
             const url = "${{ steps.deploy.outputs.preview_url }}";
-            const folder = "${{ steps.detect.outputs.site_folder }}";
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `🚀 Preview deployed for \`${folder}\`:\n\n🔗 [View Preview](${url})`
-            });
+              body: `🚀 Preview deployed for \`${{ steps.detect.outputs.site_folder }}\`:\n\n🔗 [View Preview](${url})`
+            })
