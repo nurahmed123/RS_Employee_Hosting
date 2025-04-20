@@ -43,16 +43,8 @@ jobs:
 
       - name: Pull Vercel Environment Info
         working-directory: ${{ steps.detect.outputs.site_folder }}
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-        run: |
-          vercel pull --yes --environment=preview \
-            --token=$VERCEL_TOKEN \
-            --org-id=$VERCEL_ORG_ID \
-            --project-id=$VERCEL_PROJECT_ID
-
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+ 
       - name: Build Project
         working-directory: ${{ steps.detect.outputs.site_folder }}
         env:
