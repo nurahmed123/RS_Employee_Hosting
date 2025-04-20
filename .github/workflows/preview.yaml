@@ -47,7 +47,7 @@ jobs:
         id: deploy
         working-directory: ${{ steps.detect.outputs.site_folder }}
         run: |
-          url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
+          url=$(vercel deploy --prebuilt --token=ipvzJHgypRYHHIwH8d7lbyBN)
           echo "preview_url=$url" >> $GITHUB_OUTPUT
 
       - name: Comment Preview URL on PR
