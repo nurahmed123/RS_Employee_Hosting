@@ -30,7 +30,9 @@ jobs:
         id: deploy
         run: |
           cd Sites/${{ steps.detect.outputs.folder }}
-          url=$(vercel --yes --token=ipvzJHgypRYHHIwH8d7lbyBN)
+          sanitized_name=$(echo "${{ steps.detect.outputs.folder }}" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9._-]/-/g' | sed 's/---*/-/g' | cut -c1-100)
+          url=$(vercel --yes --token=ipvzJHgypRYHHIwH8d7lbyBN --name=$sanitized_name)
+
           echo "preview_url=$url" >> $GITHUB_OUTPUT
 
       - name: Comment PR with preview URL
