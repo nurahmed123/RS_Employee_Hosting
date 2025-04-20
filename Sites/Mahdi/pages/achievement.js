@@ -1,0 +1,196 @@
+import Head from "next/head";
+import Link from "next/link";
+import { FaHtml5, FaGithub, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { TbBrandNextjs } from "react-icons/tb";
+import { FiDatabase } from "react-icons/fi";
+import { AiOutlineDeploymentUnit } from "react-icons/ai";
+import GalleryView from "@/components/GalleryView";
+import { useState } from "react";
+import Image from "next/image";
+import Script from "next/script";
+
+function extractFirstImageUrl(markdownContent) {
+    if (!markdownContent || typeof markdownContent !== "string") {
+        return null;
+    }
+    const regex = /!\[.*?\]\((.*?)\)/;
+    const match = markdownContent.match(regex);
+    return match ? match[1] : null;
+}
+
+export default function Blog({ blogs }) {
+    const LogoImage = `https://files.edgestore.dev/iz2sept3369gmc0f/publicFiles/_public/37b0a981-7d1e-4c79-ae16-47d31e4be6fa.png`;
+    const [displayedBlogs, setDisplayedBlogs] = useState(blogs.slice(0, 5));
+    const [currentCount, setCurrentCount] = useState(5);
+    const perPage = 5;
+
+    const loadMoreBlogs = () => {
+        const nextCount = currentCount + perPage;
+        setDisplayedBlogs((prev) => [...prev, ...blogs.slice(currentCount, nextCount)]);
+        setCurrentCount(nextCount);
+    };
+
+    return (
+        <>
+            {/* Adsterra Ad JSScript */}
+            <Script
+                id="adsterra-ad"
+                strategy="lazyOnload"
+                data-cfasync="false"
+                src="//pl25948868.effectiveratecpm.com/ce15f12e9d1b6592798b163f7a7b3f15/invoke.js"
+            />
+
+            <Head>
+                <title>Achievements | RoboSuperior</title>
+                <meta
+                    name="description"
+                    content="Explore the recent achievements and milestones of RoboSuperior. Stay updated with our team's progress in robotics, technology, and education."
+                />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="icon" href="/favicon.ico" />
+
+                {/* Open Graph / Facebook */}
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="Achievements | RoboSuperior" />
+                <meta
+                    property="og:description"
+                    content="Explore the latest accomplishments of RoboSuperior in robotics, innovation, and education. Read our achievements and progress in various competitions."
+                />
+                <meta property="og:url" content={`${process.env.SITE_URL}/achievement`} />
+                <meta property="og:image" content='/img/achithum.png' />
+
+                {/* Twitter */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Achievements | RoboSuperior" />
+                <meta
+                    name="twitter:description"
+                    content="Stay updated with RoboSuperior's latest achievements in the world of robotics, education, and technology."
+                />
+                <meta name="twitter:image" content='/img/achithum.png' />
+
+                {/* Structured Data (Schema.org) */}
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "BlogPosting",
+                            headline: "Our Achievements",
+                            description:
+                                "Explore the recent achievements of RoboSuperior in robotics, coding, and technology innovations.",
+                            image: "/img/blog.png",
+                            author: {
+                                "@type": "Organization",
+                                name: "RoboSuperior",
+                            },
+                            publisher: {
+                                "@type": "Organization",
+                                name: "RoboSuperior",
+                                logo: {
+                                    "@type": "ImageObject",
+                                    url: "/img/logo.png",
+                                },
+                            },
+                            datePublished: new Date().toISOString(),
+                            url: `${process.env.SITE_URL}/achievement`,
+                        }),
+                    }}
+                />
+
+            </Head>
+
+            <GalleryView
+                img4text=""
+                img4url={"https://files.edgestore.dev/iz2sept3369gmc0f/publicFiles/_public/1dfc3530-98ef-46bf-b604-c36d25fa80e5.jpg"}
+                img3text=""
+                img3url="https://files.edgestore.dev/iz2sept3369gmc0f/publicFiles/_public/d769bdad-84c1-46ea-b644-95f4c689f0f4.jpg"
+                img2text=""
+                img2url="https://files.edgestore.dev/iz2sept3369gmc0f/publicFiles/_public/cc16a027-11e3-4959-af16-f13950efd790.jpg"
+                img1text=""
+                img1url="https://files.edgestore.dev/iz2sept3369gmc0f/publicFiles/_public/20081534-2ed5-4659-b27b-bc22118c6f98.webp"
+                headline="Our Achievemnts"
+                description="....."
+            />
+            <section className="main_blog_section">
+                <div className="container flex flex-sb flex-left flex-wrap">
+                    <div className="leftblog_sec">
+                        <h2>Recently Published</h2>
+                        <div className="blogs_sec">
+                            {displayedBlogs.map((blog) => {
+                                const firstImageUrl = extractFirstImageUrl(blog.description);
+                                return (
+                                    <div className="blog" key={blog._id}>
+                                        <div className="blogimg">
+                                            <Link href={`/achievement/${blog.slug}`}>
+                                                <Image
+                                                    src={firstImageUrl || "/img/noimage.jpg"}
+                                                    alt={`Image for ${blog.title}`}
+                                                    className="transition-transform hover:scale-105 duration-300 ease-in-out"
+                                                    width={300}
+                                                    height={200}
+                                                />
+                                            </Link>
+                                        </div>
+                                        <div className="bloginfo">
+                                            <Link href={`/tag/${blog.tags[0]}`}>
+                                                <div className="blogtag">{blog.tags[0]}</div>
+                                            </Link>
+                                            <Link href={`/achievement/${blog.slug}`}>
+                                                <h3>{blog.title}</h3>
+                                            </Link>
+                                            <p>{blog.metadescription}</p>
+                                            <div className="blogauthor flex gap-1">
+                                                <div className="blogaimg">
+                                                    <img src={LogoImage} alt="author" />
+                                                </div>
+                                                <div className="flex flex-col flex-left gap-05">
+                                                    <h4>RoboSuperior</h4>
+                                                    <span>
+                                                        {new Date(blog.createdAt).toLocaleDateString("en-US", {
+                                                            month: "long",
+                                                            day: "numeric",
+                                                            year: "numeric",
+                                                        })}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                        <div className="blogpagination flex justify-center mt-4">
+                            {currentCount < blogs.length && (
+                                <button onClick={loadMoreBlogs}>
+                                    Load More
+                                </button>
+                            )}
+                        </div>
+                    </div>
+                    <div className="rightblog_info">
+                        {/* Add your Topics and Tags Section */}
+                        {/* adsterra native banner ad  */}
+                        <div id="container-ce15f12e9d1b6592798b163f7a7b3f15"></div>
+                    </div>
+                </div>
+            </section>
+        </>
+    );
+}
+
+export async function getServerSideProps(context) {
+    const { req } = context;
+    const baseUrl = req ? `${req.headers["x-forwarded-proto"] || "http"}://${req.headers.host}` : "";
+
+    const res = await fetch(`${baseUrl}/api/getachievement`);
+    const data = await res.json();
+
+    // Filter blogs to only include published ones
+    const publishedBlogs = data.filter((blog) => blog.status === "publish");
+
+    return {
+        props: {
+            blogs: publishedBlogs,
+        },
+    };
+}

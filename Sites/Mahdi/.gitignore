@@ -1,0 +1,7 @@
+node_modules
+.env
+.next
+
+public/robots.txt
+public/sitemap.xml
+backend_admin_dashboard/.env.swp

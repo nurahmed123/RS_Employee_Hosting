@@ -1,0 +1,13 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /reset-password
+
+# Host
+Host: https://robosuperior.com
+
+# Sitemaps
+Sitemap: https://robosuperior.com/sitemap.xml 
