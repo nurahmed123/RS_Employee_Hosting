@@ -1,11 +1,15 @@
 name: Vercel Preview Deployment
 
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
 on:
   pull_request:
     types: [opened, synchronize, reopened]
 
 jobs:
-  deploy:
+  preview:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,35 +33,21 @@ jobs:
         run: npm install
 
       - name: Install Vercel CLI
-        run: npm install -g vercel
-
-      - name: Debug Secrets (safe)
-        run: |
-          echo "Token present: ${VERCEL_TOKEN:+yes}"
-          echo "Org ID present: ${VERCEL_ORG_ID:+yes}"
-          echo "Project ID present: ${VERCEL_PROJECT_ID:+yes}"
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: npm install --global vercel
 
       - name: Pull Vercel Environment Info
         working-directory: ${{ steps.detect.outputs.site_folder }}
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
- 
-      - name: Build Project
-        working-directory: ${{ steps.detect.outputs.site_folder }}
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-        run: vercel build --token=$VERCEL_TOKEN
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Deploy to Vercel
+      - name: Build with Vercel
+        working-directory: ${{ steps.detect.outputs.site_folder }}
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy to Vercel (Preview)
         id: deploy
         working-directory: ${{ steps.detect.outputs.site_folder }}
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
-          url=$(vercel deploy --prebuilt --token=$VERCEL_TOKEN)
+          url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
           echo "preview_url=$url" >> $GITHUB_OUTPUT
 
       - name: Comment Preview URL on PR
@@ -69,5 +59,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `✅ Preview deployed for \`${{ steps.detect.outputs.site_folder }}\`:\n\n🔗 [View Preview](${url})`
-            });
+              body: `✅ **Vercel Preview Deployed** for \`${{ steps.detect.outputs.site_folder }}\`:\n\n🔗 [View Preview Deployment](${url})`
+            })
