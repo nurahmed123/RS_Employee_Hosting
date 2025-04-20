@@ -15,7 +15,7 @@ jobs:
       - name: Detect Site Folder
         id: detect
         run: |
-          folder=$(find Sites -maxdepth 1 -mindepth 1 -type d | head -n 1)
+          folder=$(find Sites -mindepth 1 -maxdepth 1 -type d | head -n 1)
           echo "Detected folder: $folder"
           echo "site_folder=$folder" >> $GITHUB_OUTPUT
 
@@ -31,6 +31,16 @@ jobs:
       - name: Install Vercel CLI
         run: npm install -g vercel
 
+      - name: Debug Secrets (safe)
+        run: |
+          echo "Token present: ${VERCEL_TOKEN:+yes}"
+          echo "Org ID present: ${VERCEL_ORG_ID:+yes}"
+          echo "Project ID present: ${VERCEL_PROJECT_ID:+yes}"
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
       - name: Pull Vercel Environment Info
         working-directory: ${{ steps.detect.outputs.site_folder }}
         env:
@@ -38,17 +48,24 @@ jobs:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
         run: |
-          vercel pull --yes --environment=preview
+          vercel pull --yes --environment=preview \
+            --token=$VERCEL_TOKEN \
+            --org-id=$VERCEL_ORG_ID \
+            --project-id=$VERCEL_PROJECT_ID
 
       - name: Build Project
         working-directory: ${{ steps.detect.outputs.site_folder }}
-        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: vercel build --token=$VERCEL_TOKEN
 
       - name: Deploy to Vercel
         id: deploy
         working-directory: ${{ steps.detect.outputs.site_folder }}
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
-          url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
+          url=$(vercel deploy --prebuilt --token=$VERCEL_TOKEN)
           echo "preview_url=$url" >> $GITHUB_OUTPUT
 
       - name: Comment Preview URL on PR
