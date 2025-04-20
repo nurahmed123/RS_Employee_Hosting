@@ -369,6 +369,134 @@ body::before {
     line-height: 1.6;
 }
 
+/* Features Section */
+.features .serv-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.features .serv-content .card {
+    flex: 1 1 300px;
+    max-width: 350px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.features .serv-content .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: #23b410;
+}
+
+.features .serv-content .card i {
+    font-size: 50px;
+    color: #23b410;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.features .serv-content .card .text {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.features .serv-content .card p {
+    color: #ddd;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.image-container {
+    width: 100%;
+    height: 180px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.features .serv-content .card:hover .image-container img {
+    transform: scale(1.1);
+}
+
+/* Achievements Section */
+.achievements .serv-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.achievements .serv-content .card {
+    flex: 1 1 300px;
+    max-width: 350px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.achievements .serv-content .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: #23b410;
+}
+
+.achievements .serv-content .card i {
+    font-size: 50px;
+    color: #23b410;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.achievements .serv-content .card .text {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.achievements .serv-content .card p {
+    color: #ddd;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.image-container {
+    width: 100%;
+    height: 180px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.achievements .serv-content .card:hover .image-container img {
+    transform: scale(1.1);
+}
+
 /* Services Section */
 .services .serv-content {
     display: flex;
@@ -1051,3 +1179,132 @@ footer .social-icons a:hover {
         font-size: 14px;
     }
 }
+/* Education Section - Transparent Version */
+.education {
+    position: relative;
+    padding: 120px 0;
+    background: transparent; /* Remove dark background */
+  }
+  
+  .education .title::after {
+    content: "My Journey";
+    background: #121212; /* Keep background for the title decoration */
+  }
+  
+  .education-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+  
+  .education-content .card {
+    flex: 1 1 300px;
+    max-width: 350px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    border-top: 4px solid #23b410;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .education-content .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(35, 180, 16, 0.2);
+    background: rgba(255, 255, 255, 0.15);
+  }
+  
+  /* Keep all other education card styles the same */
+  .education-content .card i {
+    font-size: 50px;
+    color: #23b410;
+    margin-bottom: 20px;
+  }
+  
+  .education-content .card .text {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #fff; /* Ensure text is visible */
+  }
+  
+  .education-content .card .institution {
+    color: #23b410;
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .education-content .card .date {
+    color: #ddd;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  
+  .education-content .card p {
+    color: #eee;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  /* Social Links */
+.social-links {
+    margin-top: 20px;
+  }
+  
+  .social-links a {
+    color: white;
+    background: #23b410;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+  }
+  
+  .social-links a:hover {
+    background: white;
+    color: #23b410;
+    transform: scale(1.1);
+  }
+/* Social Links in Home Section */
+.home-social-links {
+    margin-top: 25px;
+  }
+  
+  .home-social-links {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .home-social-links a {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+    background-color: #191b19;
+    border-radius: 50%;
+    transition: 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .home-social-links a:hover {
+    color: #23b410;
+    background-color: white;
+    transform: scale(1.1);
+  }
+  .home-social-links {
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-start; /* aligns left */
+    gap: 15px;
+    padding-left: 0px; /* adjust this to nudge left/right */
+  }
+  
