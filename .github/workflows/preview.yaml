@@ -1,4 +1,4 @@
-name: Vercel Preview Deployment
+name: Deploy Vercel Preview on PR
 
 on:
   pull_request:
@@ -9,21 +9,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: Detect added site folder
+      - name: Detect modified folder under /Sites/
         id: site
         run: |
           git fetch origin main
-          # Get first new or changed folder under /Sites/
           folder=$(git diff --name-only origin/main...HEAD | grep '^Sites/' | cut -d/ -f2 | sort | uniq | head -n 1)
-          echo "Detected site folder: $folder"
+          echo "Detected folder: $folder"
           echo "folder=$folder" >> $GITHUB_OUTPUT
 
       - name: Fail if no folder found
         run: |
           if [ -z "${{ steps.site.outputs.folder }}" ]; then
-            echo "❌ No site folder detected in /Sites/. Did you add one?"
+            echo "❌ No folder found under /Sites/. Exiting."
             exit 1
           fi
 
@@ -39,11 +39,11 @@ jobs:
       - name: Install Vercel CLI
         run: npm install --global vercel
 
-      - name: Pull Vercel Environment
+      - name: Pull Vercel environment
         working-directory: Sites/${{ steps.site.outputs.folder }}
         run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Build the site
+      - name: Build the project
         working-directory: Sites/${{ steps.site.outputs.folder }}
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
 
@@ -52,19 +52,18 @@ jobs:
         working-directory: Sites/${{ steps.site.outputs.folder }}
         run: |
           url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
-          echo "Preview URL: $url"
           echo "url=$url" >> $GITHUB_OUTPUT
 
-      - name: Comment Preview Link on Pull Request
+      - name: Comment preview link on PR
         uses: actions/github-script@v7
         with:
           script: |
             const url = "${{ steps.deploy.outputs.url }}";
             const folder = "${{ steps.site.outputs.folder }}";
-            const body = `✅ **Preview Deployed** for \`${folder}\` → [${url}](${url})`;
+            const body = `🚀 **Preview ready** for \`/Sites/${folder}\` → [View Preview](${url})`;
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body
+              body,
             });
