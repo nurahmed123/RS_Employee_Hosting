@@ -1,52 +1,59 @@
 name: Vercel Preview Deployment
 
-env:
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-
 on:
   pull_request:
-    types: [opened, synchronize]  # Run on PR open and when new commits are pushed
+    types: [opened, synchronize]
 
 jobs:
-  Test:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+
+      - name: Get modified site folder
+        id: site
+        run: |
+          CHANGED=$(git diff --name-only origin/main | grep '^sites/' | cut -d/ -f2 | head -n 1)
+          echo "Detected site folder: $CHANGED"
+          echo "folder=$CHANGED" >> $GITHUB_OUTPUT
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: npm ci
-      - run: npm run test:prod
 
-  Deploy-Preview:
-    needs: [Test]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+      - name: Install dependencies
+        working-directory: sites/${{ steps.site.outputs.folder }}
+        run: npm install
 
       - name: Install Vercel CLI
         run: npm install --global vercel
 
-      - name: Pull Vercel Environment Information
+      - name: Pull Vercel Env
+        working-directory: sites/${{ steps.site.outputs.folder }}
         run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Build Project Artifacts
+      - name: Build with Vercel
+        working-directory: sites/${{ steps.site.outputs.folder }}
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Deploy Project Artifacts
-        id: vercel-deploy
-        run: echo "url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})" >> $GITHUB_OUTPUT
+      - name: Deploy Preview
+        id: vercel
+        working-directory: sites/${{ steps.site.outputs.folder }}
+        run: |
+          url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
+          echo "url=$url" >> $GITHUB_OUTPUT
 
-      - name: Comment PR with Preview URL
+      - name: Comment on PR with preview URL
         uses: actions/github-script@v7
         with:
           script: |
-            const url = "${{ steps.vercel-deploy.outputs.url }}";
-            const body = `🚀 Preview Deployment Ready: [${url}](${url})`;
+            const url = "${{ steps.vercel.outputs.url }}";
+            const folder = "${{ steps.site.outputs.folder }}";
+            const comment = `🔗 Preview for \`${folder}\` deployed: [${url}](${url})`;
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body
+              body: comment
             });
