@@ -1,52 +1,42 @@
-name: Vercel Preview Deployment
+name: Deploy PR Site to Vercel
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [opened, synchronize]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
 
-      - name: Detect modified site folder
-        id: detect
-        run: |
-          folder=$(find Sites -maxdepth 1 -mindepth 1 -type d | head -n 1)
-          echo "site_folder=$folder" >> $GITHUB_OUTPUT
+    steps:
+      - uses: actions/checkout@v3
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: Install dependencies if package.json exists
-        working-directory: ${{ steps.detect.outputs.site_folder }}
-        run: |
-          if [ -f "package.json" ]; then
-            npm install
-          fi
-
       - name: Install Vercel CLI
-        run: npm install -g vercel
+        run: npm install --global vercel
 
-      - name: Deploy to Vercel (generic)
-        id: deploy
-        working-directory: ${{ steps.detect.outputs.site_folder }}
+      - name: Get changed folder
+        id: detect
         run: |
-          url=$(vercel --token=ipvzJHgypRYHHIwH8d7lbyBN --yes)
+          folder=$(git diff --name-only origin/main...HEAD | grep '^Sites/' | cut -d/ -f2 | head -n1)
+          echo "Detected site folder: $folder"
+          echo "folder=$folder" >> $GITHUB_OUTPUT
+
+      - name: Deploy site to Vercel
+        id: deploy
+        run: |
+          cd Sites/${{ steps.detect.outputs.folder }}
+          url=$(vercel --yes --token=ipvzJHgypRYHHIwH8d7lbyBN)
           echo "preview_url=$url" >> $GITHUB_OUTPUT
 
-      - name: Comment preview URL on PR
-        uses: actions/github-script@v7
+      - name: Comment PR with preview URL
+        uses: marocchino/sticky-pull-request-comment@v2
         with:
-          script: |
-            const url = "${{ steps.deploy.outputs.preview_url }}";
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: `🚀 Preview deployed for \`${{ steps.detect.outputs.site_folder }}\`:\n\n🔗 [View Preview](${url})`
-            })
+          header: preview-link
+          message: |
+            🚀 Preview URL for **${{ steps.detect.outputs.folder }}**:  
+            👉 ${{ steps.deploy.outputs.preview_url }}
