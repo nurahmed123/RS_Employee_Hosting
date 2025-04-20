@@ -7,17 +7,27 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
 
-      - name: Get modified site folder
+      - name: Detect added site folder
         id: site
         run: |
-          CHANGED=$(git diff --name-only origin/main | grep '^sites/' | cut -d/ -f2 | head -n 1)
-          echo "Detected site folder: $CHANGED"
-          echo "folder=$CHANGED" >> $GITHUB_OUTPUT
+          git fetch origin main
+          # Get first new or changed folder under /sites/
+          folder=$(git diff --name-only origin/main...HEAD | grep '^sites/' | cut -d/ -f2 | sort | uniq | head -n 1)
+          echo "Detected site folder: $folder"
+          echo "folder=$folder" >> $GITHUB_OUTPUT
 
-      - name: Setup Node.js
+      - name: Fail if no folder found
+        run: |
+          if [ -z "${{ steps.site.outputs.folder }}" ]; then
+            echo "❌ No site folder detected in /sites/. Did you add one?"
+            exit 1
+          fi
+
+      - name: Install Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -29,31 +39,32 @@ jobs:
       - name: Install Vercel CLI
         run: npm install --global vercel
 
-      - name: Pull Vercel Env
+      - name: Pull Vercel Environment
         working-directory: sites/${{ steps.site.outputs.folder }}
         run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Build with Vercel
+      - name: Build the site
         working-directory: sites/${{ steps.site.outputs.folder }}
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Deploy Preview
-        id: vercel
+      - name: Deploy to Vercel
+        id: deploy
         working-directory: sites/${{ steps.site.outputs.folder }}
         run: |
           url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
+          echo "Preview URL: $url"
           echo "url=$url" >> $GITHUB_OUTPUT
 
-      - name: Comment on PR with preview URL
+      - name: Comment Preview Link on Pull Request
         uses: actions/github-script@v7
         with:
           script: |
-            const url = "${{ steps.vercel.outputs.url }}";
+            const url = "${{ steps.deploy.outputs.url }}";
             const folder = "${{ steps.site.outputs.folder }}";
-            const comment = `🔗 Preview for \`${folder}\` deployed: [${url}](${url})`;
+            const body = `✅ **Preview Deployed** for \`${folder}\` → [${url}](${url})`;
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: comment
+              body
             });
