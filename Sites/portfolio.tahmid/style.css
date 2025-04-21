@@ -317,7 +317,7 @@ body::before {
 }
 
 .about .title::after {
-    content: "Who I am";
+    /* content: "Who I am"; */
 }
 
 .about-content {
@@ -444,7 +444,7 @@ body::before {
 .achievements .serv-content .card {
     flex: 1 1 300px;
     max-width: 350px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(204, 204, 204, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 10px;
     padding: 30px;
@@ -454,7 +454,7 @@ body::before {
 
 .achievements .serv-content .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.3);
     border-color: #23b410;
 }
 
@@ -741,7 +741,7 @@ body::before {
 }
 
 .achievements .title::after {
-    content: "My Achievements";
+    /* content: "My Achievements"; */
 }
 
 .achievements-content {
@@ -808,7 +808,7 @@ body::before {
 }
 
 .contact .title::after {
-    content: "Get in touch";
+    /* content: "Get in touch"; */
 }
 
 .contact-content {
@@ -1187,7 +1187,7 @@ footer .social-icons a:hover {
   }
   
   .education .title::after {
-    content: "My Journey";
+    /* content: "My Journey"; */
     background: #121212; /* Keep background for the title decoration */
   }
   
