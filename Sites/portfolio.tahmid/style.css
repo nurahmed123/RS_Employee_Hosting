@@ -60,7 +60,7 @@ body {
 }
 
 .navbar .logo a span {
-    color: #23b410;
+    color: #2e322e;
     transition: all 0.3s ease;
 }
 
@@ -73,7 +73,7 @@ body {
     font-size: 16px;
     font-weight: 500;
     margin-left: 25px;
-    color: #fff;
+    color: #2d1717;
     padding: 8px 15px;
     position: relative;
     transition: all 0.3s ease;
@@ -147,9 +147,9 @@ body::before {
 .title {
     position: relative;
     text-align: center;
-    color: #23b410;
+    color: #010301;
     font-size: 40px;
-    font-weight: 500;
+    font-weight: 400;
     margin-bottom: 80px;
     padding-bottom: 20px;
     font-family: 'Ubuntu', sans-serif;
@@ -220,8 +220,8 @@ body::before {
 
 .navbar .logo a {
     color: white;
-    font-size: 35px;
-    font-weight: 600;
+    font-size: 30px;
+    font-weight: 50;
 }
 
 .navbar .logo a span {
