@@ -2,511 +2,686 @@
 <html lang="en">
 
 <head>
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MD Mozahid Hossin Mahin | Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-  <!-- AOS -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-  <!-- FAVICON -->
-  <link class="favicon" rel="icon" type="image/img" sizes="32x32" href="images/favicon-32x32.png">
-
-  <!-- Google material icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-
-   <!-- CSS -->
-  <link rel="stylesheet" href="style.css" />
-
-   <!-- FONT AWESOME -->
-  <script src="https://kit.fontawesome.com/{{YOUR KIT KEY}}.js" crossorigin="anonymous"></script>
-
-   <!-- TYPE JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
-    integrity="sha512-3J8teBiHrSyaaRBajZyIEtpDsXdPq1gsznKWIVb5CnorQuFhjWGhWe54z8YNnHHr7MZuExb9m5kvf964HiT1Sw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-   <!-- jQUERY -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-   <!-- SWEET ALERT -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-   <!-- EMAIL JS -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function () {
-      emailjs.init("{{YOUR USER KEY}}");
-    })();
-  </script>
-
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Janemon - Personal Portfolio Template">
+    <meta name="keywords" content="themes_mountain,personal, portfolio new, html, one page, bootstrap, new html template, design, creative, onepage, clean, modern">
+    <meta name="author" content="themes_mountain">
+    <!-- SITE TITLE -->
+    <title>Mozahid Hossain Mahin | Personal Portfolio </title>
+    <!-- Latest Bootstrap min CSS -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/materialdesignicons-min.css">
+    <!--- owl carousel Css-->
+    <link rel="stylesheet" href="assets/owlcarousel/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.css">
+    <!-- venobox CSS -->
+    <link rel="stylesheet" href="assets/css/venobox.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="assets/css/magic-mouse.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
 </head>
 
 <body>
-    <nav class="navbar">
-      <div class="progress-container">
-        <div class="progress-bar" id="myBar"></div>
-      </div> 
-      <div class="max-width">
-        <div class="logo">
-          <a href="#">MD Mozahid Hossin <span> Mahin</span></a>
+
+    <!-- START PRELOADER -->
+    <div class="preloader">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
         </div>
-        <ul class="menu">
-          <li><a href="#home" class="menu-btn">Home</a></li>
-          <li><a href="#about" class="menu-btn">About</a></li>
-          <li><a href="#features" class="menu-btn">Aeatures</a></li>
-          <li><a href="#skills" class="menu-btn">Skills</a></li>
-          <li><a href="#education" class="menu-btn">Education</a></li>
-          <li><a href="#services" class="menu-btn">Portfolio</a></li>
-          <li><a href="#achievement" class="menu-btn">Achievement</a></li>
-          <li><a href="#contact" class="menu-btn">Contact</a></li>
-        </ul>
-        <div class="menu-btn">
-          <i class="material-icons">menu</i>
+    </div>
+    <!-- END PRELOADER -->
+
+    <!-- START NAVBAR -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="mdi mdi-menu"></span>
+			</button>
+            <!--END BUTTON-->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul id="navbar-navlist" class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="#service">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <!--END NAVBAR NAV-->
+            </div>
+            <!--END COLLAPSE-->
         </div>
-      </div>
+        <!--END CONTAINER -->
     </nav>
-  <!-- Scroll to top button -->
-    <button id="btnScrollToTop">
-      <i class="material-icons">arrow_upward</i>
-    </button>
-    
-    <section class="home" id="home">
-      <div class="max-width">
-        <div class="home-content">
-          <div class="text-1" data-aos="fade-up">Hello, my name is</div>
-          <div class="text-2">MD Mozahid Hossin Mahin</div>
-          <div class="text-3">I'm a <span class="typing"></span></div>
-    
-          <!-- Social Links -->
-          <div class="home-social-links" data-aos="fade-up">
-            <a href="https://github.com/mahin9275" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/mahin-hossen-baa65336b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <!-- <a href="https://x.com/FNokshi53449" target="_blank"><i class="fab fa-twitter"></i></a> -->
-            <a href="https://www.facebook.com/share/1CCN1Z97At/" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/mahin_9275/profilecard/?igsh=bHV5NzFuM2k4czA0" target="_blank"><i class="fab fa-instagram"></i></a>
-          </div>
+    <!-- END NAVBAR-->
+
+    <!-- START HOME -->
+    <section data-stellar-background-ratio="0.3" id="home" class="home_" style="background-image: url(assets/img/mahin2.jpg);  background-size:cover; background-position: center center;">
+        <div id="particles-js"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-sm-12 col-xs-12">
+                    <div class="about_me_content">
+                        <span style="color: rgb(224, 97, 47);"> - Hey! I Am Mozahid Hossain Mahin</span><br>
+                        <span style="color: rgb(245, 114, 6);">
+                            SPECIALIZE IN
+                        </span>
+                        <h1 style="color: rgb(212, 24, 24);" class="typewrite" data-period="2000" data-type='[ "DEVELOPER", "DESIGNER", "PROGRAMMER"]'>
+                            <span class="wrap"></span></h1>
+                    </div>
+                    <div class="basic-info">
+                        <div class="single-basic-info">
+                            <p style="color: rgb(214, 14, 14);">Email: <br /><span style="color: rgb(218, 12, 12);">mozahidhossainmahin@gmail.com</span></p>
+                        </div><br>
+                        <div class="single-basic-info">
+                            <p style="color: rgb(240, 12, 12);">Phone: <br /><span style="color: rgb(231, 11, 11);">+880 17927-55768</span></p>
+                        </div>
+                        <div class="single-basic-info">
+                            <p style="color: rgb(196, 8, 8);">Address: <br /><span style="color: rgb(219, 11, 11);">Rangpur, BD</span></p>
+                        </div>
+                        <div class="single-basic-info">
+                            <p style="color: rgb(184, 10, 10);">Nationality: <br /><span style="color: rgb(238, 18, 18);" >Bangladesh</span></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- END COL-->
+            </div>
+            <!--- END ROW -->
         </div>
-      </div>
+        <!--- END CONTAINER -->
     </section>
-    
+    <!-- END  HOME -->
 
-  <!-- about section -->
-  <section class="about" id="about">
-    <div class="max-width">
-      <h2 class="title" data-aos="fade-down" >About Me</h2>
-      <div class="about-content">
-        <div class="column left" data-aos="fade-right" >
-          <img src="images/P3021961.jpg" alt="" />
-        </div>
-        <div class="column right" data-aos="fade-up">
-          <div class="text-1">
-            I'm MD Mozahid Hossin Mahin 
-          </div>
-          <div class="text-2">Im a <span class="typing-2"></span></div>
-          <p class="paragraph">
-           I’m Mahin, a web developer based in Bangladesh with over 2 years of experience in web development. I’m skilled in both frontend and backend development, with a focus on building user-friendly and efficient websites. I’m always eager to learn new technologies and take responsibility for delivering high-quality work. My goal is to simplify lives through meaningful digital solutions
-          <!-- <a href="{{GOOGLE DRIVE LINK FOR RESUME}}">Download
-            Resume</a> -->
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-
- <!-- Services Section -->
-<section class="features" id="features">
-  <div class="max-width">
-    <h2 class="title" data-aos="fade-down">Features </h2>
-    <div class="serv-content">
-      <div class="card" data-aos="flip-left">
-        <div class="box">
-          <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Programming" />
-          </div>
-          <i class="fas fa-laptop-code"></i>
-          <div class="text">Programming & Development</div>
-          <p>
-            Programming Expertise: Adept in Python and C programming languages, with a recent focus on mastering C++ for advanced problem solving. Algorithmic Thinking: Experienced in tackling a wide range of problems in competitive programming, emphasizing logical reasoning and efficiency. Hardware Interaction: Proficient in Arduino projects, blending coding skills with hardware innovation to develop smart and practical systems.
-          </p>
-        </div>
-      </div>
-
-      <div class="card" data-aos="flip-left">
-        <div class="box">
-          <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Web Development" />
-          </div>
-          <i class="fas fa-code"></i>
-          <div class="text">Web Development</div>
-          <p>
-            Front-end Development: Skilled in creating responsive and interactive user interfaces using HTML, CSS, and JavaScript. Back-end Integration: Experience with server-side programming and database management. Full Stack Capabilities: Able to build complete web applications from front to back with modern frameworks and technologies.
-          </p>
-        </div>
-      </div>
-
-      <div class="card" data-aos="flip-left">
-        <div class="box">
-          <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Mobile Development" />
-          </div>
-          <i class="fas fa-mobile-alt"></i>
-          <div class="text">Mobile Development</div>
-          <p>
-            Cross-platform Development: Experience building mobile applications that work across iOS and Android platforms. UI/UX Design: Focus on creating intuitive and user-friendly mobile interfaces. Performance Optimization: Skills in optimizing mobile apps for speed and efficiency, ensuring smooth user experiences across different devices.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-
- <!-- skills section services -->
- <section class="skills" id="skills">
-  <div class="max-width" data-aos="fade-down">
-    <p>     .</p>
-    <h2 class="title" data-aos="fade-up">My Skills</h2>
-    <div class="skills-content">
-      <div class="column left">
-        <div class="text">
-          My creative skills & experiences.
-        </div>
-        <p class="paragraph-2">
-          Programming Expertise: Adept in Python and C programming languages, with a recent focus on mastering C++ for advanced problem solving . Algorithmic Thinking: Experienced in tackling a wide range of problems in competitive programming, emphasizing logical reasoning and efficiency. Hardware Interaction: Proficient in Arduino projects, blending coding skills with hardware innovation to develop smart and practical systems.
-        </p>
-        <a href="#about">Read More</a>
-      </div>
-      <div class="column right skill-box">
-        <div class="icons">
-          <img src="images\skill-icons\icons8-css3.svg" alt="css" id="css-icon" data-aos="flip-left">
-          <img src="images\skill-icons\icons8-javascript.svg" alt="js" id="js-icon" data-aos="flip-left">
-          <img src="images\skill-icons\icons8-react-native.svg" alt="react" id="react-icon" data-aos="flip-left">
-          <img src="images\skill-icons\icons8-flutter.svg" alt="flutter" id="flutter-icon" data-aos="flip-left">
-        </div>
-        <div class="icons">
-          <img src="images\skill-icons\icons8-html-5.svg" alt="html", id="html-icon" data-aos="flip-left">
-          <img src="images\skill-icons\icons8-nodejs.svg" alt="nodedjs" id="nodejs-icon" data-aos="flip-left">
-          <img src="images\skill-icons\icons8-visual-studio-code-2019.svg" alt="vscode" id="vscode-icon" data-aos="flip-left">
-          <img src="images\skill-icons\icons8-c++.svg" alt="c++" id="cpp-icon" data-aos="flip-left">
-    </div>
-</section>
-
-
-<!-- Education Section -->
-<section class="education" id="education">
-  <div class="max-width">
-    <h2 class="title" data-aos="fade-down">My Education</h2>
-    <div class="education-content">
-      <!-- <div class="card" data-aos="flip-left">
-        <div class="box">
-          <i class="fas fa-school"></i>
-          <div class="text">Bachelor's Degree</div>
-          <div class="institution">University of Rajshahi</div>
-          <div class="date">2020 - 2024</div>
-          <p>
-            Computer Science & Engineering<br>
-            GPA: 3.8/4.0
-          </p>
-        </div>
-      </div> -->
-      
-     
-      <div class="card" data-aos="flip-left">
-        <div class="box">
-          <i class="fas fa-school"></i>
-          <div class="text">PEC</div>
-          <div class="institution">New Talent Kindergarten School</div>
-          <div class="date">2018</div>
-          <p>
-            General Division <br>
-
-          </p>
-        </div>
-      </div>
-
-       <div class="card" data-aos="flip-left">
-        <div class="box">
-          <i class="fas fa-school"></i>
-          <div class="text">SSC</div>
-          <div class="institution">Komorpur High School</div>
-          <div class="date">2024</div>
-          <p>
-            Science Division <br>
-
-          </p>
-        </div>
-      </div>
-      
-
-
-
-       <div class="card" data-aos="flip-left">
-        <div class="box">
-          <i class="fas fa-school"></i>
-          <div class="text">HSC</div>
-          <div class="institution">RCCI Public School and College</div>
-          <div class="date">2026</div>
-          <p>
-            Science Division <br>
-
-          </p>
-        </div>
-      </div>
-      
-
-
-    </div>
-  </div>
-</section>
-
-
-<!-- Experience Section -->
-<section class="experience" id="experience">
-  <div class="max-width">
-    <h2 class="title" data-aos="fade-down">My Experience</h2>
-    <div class="experience-content">
-      
-     <!-- Experience Card 1 -->
-     <!-- Modified Experience Card 6 with hyperlink -->
-<div class="card" data-aos="flip-left">
-  <div class="box">
-    <i class="fas fa-laptop-code"></i>
-    <div class="text">Software Developer (Learner) </div>
-    <a href="https://robosuperior.com/" target="_blank" class="company-link">
-      <div class="company">ROBO SUPERIOR</div>
-    </a>
-    <div class="date">January 2025 – Present</div>
-    <p>
-      - Develop ML models for autonomous navigation<br>
-      - Research AI-robotics applications<br>
-      - Optimize object detection algorithms<br>
-      - Implement solutions for real-world rescue operations
-    </p>
-  </div>
-</div>
-      
-     
-      
-    </div>
-  </div>
-</section>
-
-<!-- Project Section -->
-<!-- <section class="services" id="services">
-  <div class="max-width">
-    <h2 class="title" data-aos="fade-down">My Projects</h2>
-    <div class="serv-content">
-
-      <div class="card" data-aos="flip-left">
-        <div class="box">
-          <div class="image-container">
-            <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Programming" />
-          </div>
-          <i class="fas fa-laptop-code"></i>
-          <div class="text">Software Development</div>
-          <p>
-            Software development is the process of designing, building, testing, and maintaining software applications. It involves writing code to solve problems or automate tasks, using programming languages like Python, Java, or JavaScript. Software development powers everything from websites and desktop tools to embedded systems and enterprise platforms.
-          </p>
-        </div>
-      </div>
-
-
-      <div class="card" data-aos="flip-left">
-        <div class="box">
-          <div class="image-container">
-            <img src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Web Development" />
-          </div>
-          <i class="fas fa-code"></i>
-          <div class="text">Machine Learning </div>
-          <p>
-            Machine learning is a type of AI that enables computers to learn from data and make predictions or decisions without being explicitly programmed. It's used in things like recommendation systems, fraud detection, and voice recognition.
-          </p>
-        </div>
-      </div>
-
-   
-      <div class="card" data-aos="flip-left">
-        <div class="box">
-          <div class="image-container">
-            <img src="https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Mobile Development" />
-          </div>
-          <i class="fas fa-mobile-alt"></i>
-          <div class="text">App Development</div>
-          <p>
-            App development is the creation of software applications designed to run on mobile devices or desktops. It involves both frontend (user interface) and backend (server-side logic) development. App developers use tools like Swift, Kotlin, Flutter, or React Native to build apps that are functional, user-friendly, and optimized for performance.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section> -->
-
-<!-- Achievement Section -->
-<!-- <section class="achievements" id="achievements">
-  <div class="max-width">
-    <p>     .</p>
-    <h2 class="title" data-aos="fade-down">My Achievements</h2>
-    <div class="serv-content">
-
-      <div class="card" data-aos="flip-left">
-        <div class="box">
-          <div class="image-container">
-            <img src="images/01.jpeg" alt="" />
-          </div>
-          <i class="fas fa-laptop-code"></i>
-          <div class="text">Champion | RC National Science Fest 2025</div>
-          <p>
-            Won the Champion Title in the Competitive Programming Contest at Rajshahi College 8th National Science Fest. This competition was a true test of skill and a proud achievement for me.
-          </p>
-        </div>
-      </div>
-
-
-      <div class="card" data-aos="flip-left">
-        <div class="box">
-          <div class="image-container">
-            <img src="images/02.jpeg" alt="" />
-          </div>
-          <i class="fas fa-code"></i>
-          <div class="text">1st Runner-Up | 8th RUSC National Science Fiesta 2024</div>
-          <p>
-            Proud to secure 1st Runner-Up in the Project Show Competition (School & College Level) at Rajshahi University Science Club’s National Science Fiesta 2024!
-          </p>
-        </div>
-      </div>
-
-
-      <div class="card" data-aos="flip-left">
-        <div class="box">
-          <div class="image-container">
-            <img src="images/03.jpeg" alt="" />
-          </div>
-          <i class="fas fa-mobile-alt"></i>
-          <div class="text">2nd Runner-Up | Astro Science Fest 2024</div>
-          <p>
-            Secured 3rd place with our team at the Bongobondhu Sheikh Mujibur Rahman Novotheatre 2024 Project Showcas
-          </p>
-        </div>
-      </div>
-
-      
-    </div>
-  </div>
-</section> -->
-
-
-
-  <!-- Contact Section -->
-<section class="contact" id="contact">
-  <div class="max-width">
-    <h2 class="title" data-aos="fade-down">Contact Me</h2>
-    <div class="contact-content">
-      <div class="column left" data-aos="flip-left">
-        <div class="text">Let's Get in Touch</div>
-        <p class="paragraph-3">Have a question, a project in mind, or just want to say hello? I'd love to hear from you!
-          Feel free to reach out via the form below or connect with me directly through email or social media.
-          I'll get back to you as soon as possible!
-        </p>
-        <div class="icons">
-          <div class="row">
-            <i class="fas fa-user"></i>
-            <div class="info">
-              <div class="head">Name</div>
-              <div class="sub-title">MD Mozahid Hossin Mahin</div>
+    <!-- START ABOUT -->
+    <section id="about" class="about_area section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <h1>Profile</h1>
+                <p>Most common methods for designing websites that work well on desktop is responsive and adaptive design</p>
             </div>
-          </div>
-          <div class="row">
-            <i class="fas fa-map-marker-alt"></i>
-            <div class="info">
-              <div class="head">Address</div>
-              <div class="sub-title">Rangpur, Bangladesh</div>
+            <div class="row">
+                <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+                    <div class="about_img">
+                        <img src="/assets/img/mahin1 (2).JPG" class="img-fluid" alt="profile-picture" />
+                    </div>
+                </div>
+                <!-- / END COL -->
+                <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+                    <div class="about_info">
+                        <h4>Intro</h4>
+                        <h3 >Hey, my name is <h3 style="color: brown;">Mozahid Hossain Mahin.</h3>
+                        <p></p>
+                        <p><strong>I’m Mahin, a web developer based in Bangladesh with over 2 years of experience in web development.
+I’m skilled in both frontend and backend development, with a focus on building user-friendly and efficient websites. I’m always eager to learn new technologies and take responsibility for delivering high-quality work. My goal is to simplify lives through meaningful digital solutions.</strong></p>
+                    </div>
+                    <div class="skills_info">
+                        <h4>Skills</h4>
+                        <div class="progress-bar-linear">
+                            <p class="progress-bar-text">Development
+                                <span>90%</span>
+                            </p>
+                            <div class="progress-bar">
+                                <span data-percent="90"></span>
+                            </div>
+                        </div>
+                        <div class="progress-bar-linear">
+                            <p class="progress-bar-text">Web Design
+                                <span>85%</span>
+                            </p>
+                            <div class="progress-bar">
+                                <span data-percent="85"></span>
+                            </div>
+                        </div>
+                        <div class="progress-bar-linear">
+                            <p class="progress-bar-text">Creative Thinking
+                                <span>80%</span>
+                            </p>
+                            <div class="progress-bar">
+                                <span data-percent="80"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- / END COL -->
             </div>
-          </div>
-          <div class="row">
-            <i class="fas fa-envelope"></i>
-            <div class="info">
-              <div class="head">Email</div>
-              <div class="sub-title">mahin@robosuperior.com</div>
-            </div>
-          </div>
+            <!-- / END ROW -->
         </div>
-             <p><br>&nbspFind Me with </p>
-        <!-- Social Links -->
-        <div class="social-links">
-          <a href="https://github.com/mahin9275" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/mahin-hossen-baa65336b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <!-- <a href="https://x.com/FNokshi53449
-" target="_blank"><i class="fab fa-twitter"></i></a> -->
-          <a href="https://www.facebook.com/share/1CCN1Z97At/" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="https://www.instagram.com/mahin_9275/profilecard/?igsh=bHV5NzFuM2k4czA0" target="_blank"><i class="fab fa-instagram"></i></a>
+        <!-- END CONTAINER  -->
+    </section>
+    <!-- END ABOUT -->
+
+    <!-- START SERVICE -->
+    <section id="service" class="service_area section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <h1>What I'm Doing</h1>
+                <p>Most common methods for designing websites that work well on desktop is responsive and adaptive design</p>
+            </div>
+            <div class="row text-center">
+                <div class="col-lg-4 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+                    <div class="serviceBox sbbr">
+                        <div class="service-icon"><span class="ti-cup"></span></div>
+                        <h3 class="title">Web Design</h3>
+                        <p class="description">Modern, responsive, and user-friendly website designs tailored to enhance user experience and engagement.</p>
+                    </div>
+                </div>
+                <!-- END COL -->
+                <div class="col-lg-4 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+                    <div class="serviceBox sbbr">
+                        <div class="service-icon"><span class="ti-medall-alt"></span></div>
+                        <h3 class="title">Development</h3>
+                        <p class="description">Clean, efficient, and scalable development using HTML, CSS, JavaScript, and frameworks like React or Node.js.</p>
+                    </div>
+                </div>
+                <!-- END COL -->
+                <div class="col-lg-4 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
+                    <div class="serviceBox sbbr sbbrnone">
+                        <div class="service-icon"><span class="ti-image"></span></div>
+                        <h3 class="title">Social Media</h3>
+                        <p class="description">Landing pages, social media integration, and custom tools to boost your brand’s presence online.</p>
+                    </div>
+                </div>
+                <!-- END COL -->
+                <div class="col-lg-4 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s" data-wow-offset="0">
+                    <div class="serviceBox">
+                        <div class="service-icon"><span class="ti-crown"></span></div>
+                        <h3 class="title">Branding</h3>
+                        <p class="description">Creating strong and consistent brand identity through visuals, colors, and layout.</p>
+                    </div>
+                </div>
+                <!-- END COL -->
+                <div class="col-lg-4 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s" data-wow-offset="0">
+                    <div class="serviceBox sblr">
+                        <div class="service-icon"><span class="ti-key"></span></div>
+                        <h3 class="title">Strategy</h3>
+                        <p class="description">Smart planning for your website’s structure, features, and user experience.
+                       </p>
+                    </div>
+                </div>
+                <!-- END COL -->
+                <div class="col-lg-4 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s" data-wow-offset="0">
+                    <div class="serviceBox">
+                        <div class="service-icon"><span class="ti-hand-open"></span></div>
+                        <h3 class="title">Consulting</h3>
+                        <p class="description">Professional advice on web design, SEO, performance improvement, and technology choices.</p>
+                    </div>
+                </div>
+                <!-- END COL -->
+            </div>
+            <!-- END ROW -->
         </div>
-      </div>
+        <!-- END CONTAINER -->
+    </section>
+    <!-- END SERVICE -->
 
-      <div class="column right" data-aos="flip-right">
-        <div class="text">Message Me</div>
-        <form action="#Contact">
-          <div class="fields">
-            <div class="field name">
-              <input type="text" id="fromName" placeholder="Name" required autocomplete="off">
+    <!-- START FUNFACT -->
+    <section data-stellar-background-ratio="0.3" id="funfact" class="funfact_area counter_feature section-padding" style="background-image: url(assets/img/counter-bg.jpg);  background-size:cover; background-position: center center;">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-3 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+                    <div class="sp sp-one">
+                        <h2 class="counter-num">1</h2>
+                        <h3>Happy Client</h3>
+                    </div>
+                </div>
+                <!-- END COL-->
+                <div class="col-lg-3 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+                    <div class="sp sp-two">
+                        <h2 class="counter-num">1</h2>
+                        <h3>Successful Project</h3>
+                    </div>
+                </div>
+                <!-- END COL -->
+                <div class="col-lg-3 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
+                    <div class="sp sp-three">
+                        <h2 class="counter-num">0</h2>
+                        <h3>ui / ux projects</h3>
+                    </div>
+                </div>
+                <!-- END COL -->
+                <div class="col-lg-3 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s" data-wow-offset="0">
+                    <div class="sp sp-four">
+                        <h2 class="counter-num">5</h2>
+                        <h3>Team Members</h3>
+                    </div>
+                </div>
+                <!-- END COL -->
             </div>
-            <div class="field email">
-              <input type="email" id="emailSender" placeholder="Email" required autocomplete="off">
-            </div>
-          </div>
-          <div class="field">
-            <input type="text" id="subjectSender" placeholder="Subject" required autocomplete="off">
-          </div>
-          <div class="field textarea">
-            <textarea cols="30" rows="10" id="message" placeholder="Message" required autocomplete="off"></textarea>
-          </div>
-          <div class="button">
-            <button onclick='sendMail()' type="submit">Send Message</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
+            <!-- END ROW  -->
+        </div>
+        <!-- END CONTAINER  -->
+    </section>
+    <!-- END FUNFACT -->
 
-  <!-- footer section start -->
-  <footer>
-    <div class="text-center">
-      <span>
-        Created By <a href="https://nadimshahriar.robosuperior.com/">MD NADIM SHAHRIAR APURBO | Founder , Robo Superior</a> | <span class="far fa-copyright"> </span> <script>document.write(new Date().getFullYear())</script> All rights reserved.
-        <!-- <div>
-          <a href="https://www.linkedin.com/in/MD Mozahid Hossin Mahin/"><i class="fab fa-linkedin"></i></a>
-          <a href="https://github.com/MD Mozahid Hossin Mahin"><i class="fab fa-github"></i></a>
-          <a href="https://www.instagram.com/Mahin79/"><i class="fab fa-istagram"></i></a>
-          <a href="https://x.com/FMahin53449"><i class="fab fa-twitter"></i></a>
-        </div> -->
-      </span>
+    <!-- START PORTFOLIOS -->
+    <section id="portfolio" class="portfolio_area section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <h1>The projects</h1>
+                <p>Most common methods for designing websites that work well on desktop is responsive and adaptive design.</p>
+            </div>
+            <div class="row portfolio_item">
+                <div class="col-lg-12 text-center">
+                    <div class="portfolio_filter">
+                        <ul>
+                            <li class="active filter" data-filter="all">All</li>
+                            <li class="filter" data-filter=".design">Design</li>
+                            <li class="filter" data-filter=".print">print</li>
+                            <li class="filter" data-filter=".logo">logo</li>
+                            <li class="filter" data-filter=".marketing">Marketing</li>
+                            <li class="filter" data-filter=".media">Social media</li>
+                            <li class="filter" data-filter=".web">Web Details</li>
+                            <li class="filter" data-filter=".video">Video</li>
+                        </ul>
+                    </div>
+                </div>
+                <!--END COL -->
+                <div class="col-xs-12 col-sm-6 col-lg-4 mix print marketing">
+                    <div class="box">
+                        <img src="assets/img/portfolio/1.jpg" alt="">
+                        <div class="box-content">
+                            <h3 class="title">Design Landing Page</h3>
+                            <span class="post">Branding , Design</span>
+                        </div>
+                        <ul class="icon">
+                            <li><a href="assets/img/portfolio/1.jpg" class="port-icon lightbox" data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--- END COL -->
+                <div class="col-xs-12 col-sm-6 col-lg-4 mix web">
+                    <div class="box">
+                        <img src="assets/img/portfolio/2.jpg" alt="">
+                        <div class="box-content">
+                            <h3 class="title">Web Project</h3>
+                            <span class="post">Website, logo</span>
+                        </div>
+                        <ul class="icon">
+                            <li><a href="assets/img/portfolio/2.jpg" class="port-icon lightbox" data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--- END COL -->
+                <div class="col-xs-12 col-sm-6 col-lg-4 mix logo">
+                    <div class="box">
+                        <img src="assets/img/portfolio/3.jpg" alt="">
+                        <div class="box-content">
+                            <h3 class="title">logo company</h3>
+                            <span class="post">logo,graphics</span>
+                        </div>
+                        <ul class="icon">
+                            <li><a href="assets/img/portfolio/3.jpg" class="port-icon lightbox" data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--- END COL -->
+                <div class="col-xs-12 col-sm-6 col-lg-4 mix design web">
+                    <div class="box">
+                        <img src="assets/img/portfolio/4.jpg" alt="">
+                        <div class="box-content">
+                            <h3 class="title">Digital Marketing</h3>
+                            <span class="post">Design, Web</span>
+                        </div>
+                        <ul class="icon">
+                            <li><a href="assets/img/portfolio/4.jpg" class="port-icon lightbox" data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--- END COL -->
+                <div class="col-xs-12 col-sm-6 col-lg-4 mix print video">
+                    <div class="box">
+                        <img src="assets/img/portfolio/5.jpg" alt="">
+                        <div class="box-content">
+                            <h3 class="title">Print media</h3>
+                            <span class="post">Video, print</span>
+                        </div>
+                        <ul class="icon">
+                            <li><a href="assets/img/portfolio/5.jpg" class="port-icon lightbox" data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--- END COL -->
+                <div class="col-xs-12 col-sm-6 col-lg-4 mix logo marketing">
+                    <div class="box">
+                        <img src="assets/img/portfolio/6.jpg" alt="">
+                        <div class="box-content">
+                            <h3 class="title">Logo Marketing</h3>
+                            <span class="post">social, media</span>
+                        </div>
+                        <ul class="icon">
+                            <li><a href="assets/img/portfolio/6.jpg" class="port-icon lightbox" data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--- END COL -->
+                <div class="col-xs-12 col-sm-6 col-lg-4 mix design media">
+                    <div class="box">
+                        <img src="assets/img/portfolio/7.jpg" alt="">
+                        <div class="box-content">
+                            <h3 class="title">design agency work</h3>
+                            <span class="post">logo, graphics</span>
+                        </div>
+                        <ul class="icon">
+                            <li><a href="assets/img/portfolio/7.jpg" class="port-icon lightbox" data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--- END COL -->
+                <div class="col-xs-12 col-sm-6 col-lg-4 mix video">
+                    <div class="box">
+                        <img src="assets/img/portfolio/8.jpg" alt="">
+                        <div class="box-content">
+                            <h3 class="title">Video marketing</h3>
+                            <span class="post">Portfolio, Personal</span>
+                        </div>
+                        <ul class="icon">
+                            <li><a href="assets/img/portfolio/8.jpg" class="port-icon lightbox" data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--- END COL -->
+                <div class="col-xs-12 col-sm-6 col-lg-4 mix logo media">
+                    <div class="box">
+                        <img src="assets/img/portfolio/9.jpg" alt="">
+                        <div class="box-content">
+                            <h3 class="title">Social media</h3>
+                            <span class="post">logo, design</span>
+                        </div>
+                        <ul class="icon">
+                            <li><a href="assets/img/portfolio/9.jpg" class="port-icon lightbox" data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--- END COL -->
+            </div>
+            <!-- / END ROW -->
+        </div>
+        <!-- END CONTAINER  -->
+    </section>
+    <!-- END PORTFOLIOS -->
+
+    <!-- START RESUME -->
+    <section id="resume" class="resume_area section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <h1>Resume</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+                    <h4 class="timeline_title">Education</h4>
+                    <div class="single_timeline">
+                        <h4>Komorpur Chowmatha High School</h4>
+                        <span class="active_year">2024</span>
+                        <span class="active_company">- Secondary School Certificate </span>
+                        <p>Under Dinajpur Board</p>
+                        <p>Group: Science</p>
+                    </div>
+                    <div class="single_timeline">
+                        <h4>RCCI Public School And College</h4>
+                        <span class="active_year">2026</span>
+                        <span class="active_company">-  Higher Secondary Certificate</span>
+                        <p>Under Dinajpur Board</p>
+                        <p>Group: Science</p>
+                    </div>
+                    <div class="single_timeline">
+                        <h4>Degree</h4>
+                        <span class="active_year">2030</span>
+                        <span class="active_company">- Bachelor</span>
+                        <p>Upcoming...</p>
+                    </div>
+                </div>
+                <!--END COL -->
+                <!--<div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
+                    <h4 class="timeline_title">Experience</h4>
+                    <div class="single_timeline">
+                        <h4>Envato Market</h4>
+                        <span class="active_year">2013</span>
+                        <span class="active_company">- Designer.</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae accusantium consectetur.</p>
+                    </div>
+                    <div class="single_timeline">
+                        <h4>ABC Studiod</h4>
+                        <span class="active_year">2016</span>
+                        <span class="active_company">-  Front-End Developer.</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae accusantium consectetur.</p>
+                    </div>
+                    <div class="single_timeline single_timeline_mbnone">
+                        <h4>Digital Web Studio.</h4>
+                        <span class="active_year">2017 to Present</span>
+                        <span class="active_company">- Senior Developer.</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae accusantium consectetur.</p>
+                    </div>
+                </div>
+                <!--END COL -->
+            </div>
+            <!-- / END ROW -->
+        </div>
+        <!-- END CONTAINER  -->
+    </section>
+    <!-- END RESUME -->
+
+    <!-- START TEAM -->
+    <section id="team" class="our_team section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <h1>Team Members</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+                    <div class="single-team">
+                        <div class="img"><img src="assets/img/team/billa.jpg" class="img-fluid" alt=""></div>
+                        <div class="team-content">
+                            <h3>Mottasim Billa</h3>
+                            <p>COO</p>
+                            <ul class="social">
+                                <li><a href="https://www.facebook.com/md.mottasimbilla.sorkar" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://www.instagram.com/md.mottasimbilla/" class="instagram"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- END COL -->
+                <div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+                    <div class="single-team">
+                        <div class="img"><img src="assets/img/team/mishuk.jpg" class="img-fluid" alt=""></div>
+                        <div class="team-content">
+                            <h3>Mishuk Babu Shoukhin</h3>
+                            <p>IT Developer</p>
+                            <ul class="social">
+                                <li><a href="https://www.facebook.com/mishuk008" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://www.instagram.com/mi_sh_uk_008/" class="instagram"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- END COL -->
+                <div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
+                    <div class="single-team">
+                        <div class="img"><img src="assets/img/team/sojeeb.jpg" class="img-fluid" alt=""></div>
+                        <div class="team-content">
+                            <h3>Nurnobi Islam</h3>
+                            <p>Tech Developer</p>
+                            <ul class="social">
+                                <li><a href="https://www.facebook.com/profile.php?id=61577646245513" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://www.instagram.com/nurnobisojeeb?igsh=MWZkcjJqYjhhNXJkbA==" class="instagram"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- END COL -->
+                <div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s" data-wow-offset="0">
+                    <div class="single-team">
+                        <div class="img"><img src="assets/img/team/firoz.jpg" class="img-fluid" alt=""></div>
+                        <div class="team-content">
+                            <h3>Fahim Firoz</h3>
+                            <p>Tech Developer</p>
+                            <ul class="social">
+                                <li><a href="https://www.facebook.com/FahimFeroz.FF" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://www.instagram.com/fahimferoz.ff/" class="instagram"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- END COL -->
+            </div>
+            <!-- END ROW -->
+        </div>
+        <!-- END CONTAINER -->
+    </section>
+    <!-- END TEAM -->
+
+    <!-- START CONTACT -->
+    <section id="contact" class="contact_us section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <h1>Write Your Message</h1>
+                <p>Please fill out the form on this section to contact with me. Or call between 9:00 a.m. and 8:00 p.m. ET, Monday through Friday.</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+                    <div class="contact">
+                        <form class="form" name="enq" method="post" action="contact.php" onsubmit="return validation();">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <input type="text" name="name" class="form-control" placeholder="Name" required="required">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="email" name="email" class="form-control" placeholder="Email" required="required">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <input type="text" name="subject" class="form-control" placeholder="Subject" required="required">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <textarea rows="6" name="message" class="form-control" placeholder="Your Message" required="required"></textarea>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <button type="submit" value="Send message" name="submit" id="submitButton" class="btn btn-lg contact_btn" title="Submit Your Message!">Touch here</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- END COL  -->
+                <div class="col-lg-4 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
+                    <div class="address_bg">
+                        <div class="single_address">
+                            <div class="address_br"><span class="ti-location-pin"></span></div>
+                            <h4>Address</h4>
+                            <p>Gaibandha, Rangpur, <br />Bangladesh</p>
+                        </div>
+                        <div class="single_address">
+                            <div class="address_br"><span class="ti-mobile"></span></div>
+                            <h4>Phone</h4>
+                            <p>+880 17927-55768</p>
+                        </div>
+                        <div class="single_address">
+                            <div class="address_br"><span class="ti-email"></span></div>
+                            <h4>Email</h4>
+                            <p>mozahidhossainmahin@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- END COL  -->
+            </div>
+            <!-- END ROW -->
+        </div>
+        <!-- END CONTAINER -->
+    </section>
+    <!-- END CONTACT -->
+
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1378.1596194121782!2d89.3668838066874!3d25.234170935411676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fce10b66cb5a35%3A0x6aa700727d120a8f!2sKomorpur%20johuria%20islamia%20madrasa!5e0!3m2!1sen!2sbd!4v1751581368838!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-  </footer>
-  <script src="script.js"></script>
-  <script>
-    // When the user scrolls the page, execute myFunction 
-    window.onscroll = function() {myFunction()};
-    
-    function myFunction() {
-      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      var scrolled = (winScroll / height) * 100;
-      document.getElementById("myBar").style.width = scrolled + "%";
-    }
+
+
+    <!-- START FOOTER -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 text-center wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+                    <div class="single_footer">
+                        <div class="footer_social_profile">
+                            <ul>
+                                <li><a href="https://www.facebook.com/md.mahin.hossen.395098">Facebook</a></li>
+                                <li><a href="https://www.instagram.com/mahin_9275/">Instagram</a></li>
+                                <li><a href="https://github.com/mahin9275">Github</a></li>
+                                <li><a href="https://www.linkedin.com/in/mahin-hossen-baa65336b">Linkedin</a></li>
+                            </ul>
+                        </div>
+                        <!--- END SOCIAL PROFILE -->
+                        <p class="copyright">Copyright &copy; 2025 | All Rights Reserved.</p>
+                        <p>Developed By</p><a href="https://www.facebook.com/md.mahin.hossen.395098">Mozahid Hossain Mahin</a>
+                    </div>
+                </div>
+                <!--- END COL -->
+            </div>
+            <!--- END ROW -->
+        </div>
+        <!--- END CONTAINER -->
+    </div>
+    <!-- END FOOTER -->
+
+    <!-- Latest jQuery -->
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <!-- Latest compiled and minified Bootstrap -->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- owl-carousel min js  -->
+    <script src="assets/owlcarousel/js/owl.carousel.min.js"></script>
+    <!-- countTo js -->
+    <script src="assets/js/jquery.inview.min.js"></script>
+    <!-- jquery appear js -->
+    <script src="assets/js/jquery.appear.js"></script>
+    <!-- jquery mixitup min js -->
+    <script src="assets/js/jquery.mixitup.js"></script>
+    <!-- jquery venobox min js -->
+    <script src="assets/js/venobox.min.js"></script>
+    <!-- stellar js -->
+    <script src="assets/js/jquery.stellar.min.js"></script>
+    <!-- particles -->
+    <script src="assets/js/particles.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <!-- jquery animated-text js -->
+    <script src="assets/js/animated-text.js"></script>
+    <script src="assets/js/animated-text-dark.js"></script>
+    <!-- WOW - Reveal Animations When You Scroll -->
+    <script src="assets/js/wow.min.js"></script>
+    <!-- scrolltopcontrol js -->
+    <script src="assets/js/scrolltopcontrol.js"></script>
+    <!-- scripts js -->
+    <script src="assets/js/magic_mouse.js"></script>
+    <script src="assets/js/scripts.js"></script>
+    <script type="text/javascript">
+        options = {
+            "cursorOuter": "circle-basic",
+            "hoverEffect": "circle-move",
+            "hoverItemMove": false,
+            "defaultCursor": false,
+            "outerWidth": 30,
+            "outerHeight": 30
+        }
+        magicMouse(options);
     </script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>AOS.init({easing : 'ease-in',delay: 100,duration: 300,offset:100});window.addEventListener('load', AOS.refresh);</script>
+
 </body>
 
 </html>
