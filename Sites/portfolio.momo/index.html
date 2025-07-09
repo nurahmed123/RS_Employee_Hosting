@@ -1,0 +1,833 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mahriya Hasan Momo - Full Stack Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div id="app">
+      <!-- Theme Toggle -->
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <div class="toggle-track">
+          <div class="toggle-thumb">
+            <span class="sun-icon">☀️</span>
+            <span class="moon-icon">🌙</span>
+          </div>
+        </div>
+      </button>
+
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="hero-background">
+          <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+            <div class="shape shape-6"></div>
+          </div>
+          <div class="gradient-overlay"></div>
+        </div>
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="hero-badge">
+              <i class="fas fa-code"></i>
+              <!-- <span>Available for Work</span> -->
+            </div>
+            <h1 class="hero-title">
+              <span class="title-line">Hello, I'm</span>
+              <span class="title-name">Mahriya Hasan Momo </span>
+              <span class="title-role">Full Stack Developer</span>
+              <span style="font-size:1.5rem;color:var(--text-secondary);font-weight:500;">I am specialized in </span><span id="typewriter"></span>
+        
+            </h1>
+            <p class="hero-description">
+              Passionate about creating exceptional digital experiences with cutting-edge technologies. 
+              I transform ideas into powerful, scalable web applications that drive business success.
+            </p>
+            <!-- <div class="hero-stats">
+              <div class="stat">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Years Experience</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Projects Done</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">30+</span>
+                <span class="stat-label">Happy Clients</span>
+              </div>
+            </div> -->
+
+            <span class="hero-findme" style="display:block;font-size:1.5rem;color:var(--text-secondary);margin-bottom:1rem;">Find me with:</span>
+            <div class="hero-social" style="margin:1.2rem 0 1.5rem 0;display:flex;gap:1.2rem;align-items:center;">
+              <a href="https://github.com/" target="_blank" aria-label="GitHub" style="color:var(--primary-color);font-size:1.7rem;"><i class="fab fa-github"></i></a>
+              <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn" style="color:#0a66c2;font-size:1.7rem;"><i class="fab fa-linkedin"></i></a>
+              <a href="https://twitter.com/" target="_blank" aria-label="Twitter" style="color:#1da1f2;font-size:1.7rem;"><i class="fab fa-twitter"></i></a>
+              <a href="https://instagram.com/" target="_blank" aria-label="Instagram" style="color:#e1306c;font-size:1.7rem;"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="hero-buttons">
+              <a href="#projects" class="btn btn-primary">
+                <span>View My Work</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+              <a href="#contact" class="btn btn-secondary">
+                <span>Let's Talk</span>
+                <i class="fas fa-comments"></i>
+              </a>
+              <a href="#resume" class="btn btn-outline">
+                <span>Download CV</span>
+                <i class="fas fa-download"></i>
+              </a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="image-container">
+              <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Developer" class="profile-image">
+              <div class="image-overlay"></div>
+              <div class="floating-icons">
+                <div class="tech-icon"><i class="fab fa-react"></i></div>
+                <div class="tech-icon"><i class="fab fa-node-js"></i></div>
+                <div class="tech-icon"><i class="fab fa-python"></i></div>
+                <div class="tech-icon"><i class="fab fa-js"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <div class="scroll-arrow"></div>
+          <span>Scroll Down</span>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Get to know me</span>
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">Passionate developer with a love for creating amazing digital experiences</p>
+          </div>
+          <div class="about-content">
+            <div class="about-text">
+              <div class="about-card">
+                <div class="card-header">
+                  <h3>My Journey</h3>
+                  <div class="card-icon">
+                    <i class="fas fa-rocket"></i>
+                  </div>
+                </div>
+                <p>
+                  With over 5 years of experience in web development, I've had the privilege of working 
+                  with startups and established companies to bring their digital visions to life. 
+                  My passion lies in creating user-centric applications that solve real-world problems.
+                </p>
+                <div class="about-highlights">
+                  <div class="highlight-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Clean & Efficient Code</span>
+                  </div>
+                  <div class="highlight-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Responsive Design Expert</span>
+                  </div>
+                  <div class="highlight-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Performance Optimization</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="about-image">
+              <div class="image-wrapper">
+                <img src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Workspace" class="workspace-image">
+                <div class="experience-badge">
+                  <span class="badge-number">5+</span>
+                  <span class="badge-text">Years of Experience</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="features">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">What I Offer</span>
+            <h2 class="section-title">Featured Services</h2>
+            <p class="section-subtitle">Comprehensive solutions for your digital needs</p>
+          </div>
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <h3>Web Development</h3>
+              <p>Building responsive, fast, and scalable web applications using modern frameworks and best practices.</p>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> React & Vue.js Applications</li>
+                <li><i class="fas fa-check"></i> Node.js Backend Development</li>
+                <li><i class="fas fa-check"></i> Database Design & Integration</li>
+              </ul>
+              <div class="feature-badge">Most Popular</div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h3>Mobile-First Design</h3>
+              <p>Creating beautiful, intuitive user interfaces that work seamlessly across all devices and platforms.</p>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> Responsive Web Design</li>
+                <li><i class="fas fa-check"></i> Progressive Web Apps</li>
+                <li><i class="fas fa-check"></i> Cross-Platform Compatibility</li>
+              </ul>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <h3>Performance Optimization</h3>
+              <p>Optimizing applications for speed, SEO, and user experience to ensure maximum performance.</p>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> Speed Optimization</li>
+                <li><i class="fas fa-check"></i> SEO Implementation</li>
+                <li><i class="fas fa-check"></i> Code Splitting & Lazy Loading</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="skills">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">My Expertise</span>
+            <h2 class="section-title">Skills & Technologies</h2>
+            <p class="section-subtitle">The tools and technologies I use to bring ideas to life</p>
+          </div>
+          <div class="skills-grid">
+            <div class="skill-category">
+              <div class="category-header">
+                <h3>Frontend</h3>
+                <i class="fas fa-palette"></i>
+              </div>
+              <div class="skill-items">
+                <div class="skill-item">
+                  <div class="skill-icon">
+                    <i class="fab fa-react"></i>
+                  </div>
+                  <div class="skill-info">
+                    <span class="skill-name">React</span>
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-width="95%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon">
+                    <i class="fab fa-vue"></i>
+                  </div>
+                  <div class="skill-info">
+                    <span class="skill-name">Vue.js</span>
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-width="90%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon">
+                    <i class="fab fa-js"></i>
+                  </div>
+                  <div class="skill-info">
+                    <span class="skill-name">JavaScript</span>
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-width="98%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon">
+                    <i class="fab fa-css3-alt"></i>
+                  </div>
+                  <div class="skill-info">
+                    <span class="skill-name">CSS3</span>
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-width="92%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-category">
+              <div class="category-header">
+                <h3>Backend</h3>
+                <i class="fas fa-server"></i>
+              </div>
+              <div class="skill-items">
+                <div class="skill-item">
+                  <div class="skill-icon">
+                    <i class="fab fa-node-js"></i>
+                  </div>
+                  <div class="skill-info">
+                    <span class="skill-name">Node.js</span>
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-width="88%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon">
+                    <i class="fab fa-python"></i>
+                  </div>
+                  <div class="skill-info">
+                    <span class="skill-name">Python</span>
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-width="85%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon">
+                    <i class="fas fa-database"></i>
+                  </div>
+                  <div class="skill-info">
+                    <span class="skill-name">MongoDB</span>
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-width="80%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon">
+                    <i class="fas fa-cogs"></i>
+                  </div>
+                  <div class="skill-info">
+                    <span class="skill-name">Express</span>
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-width="90%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-category">
+              <div class="category-header">
+                <h3>Tools</h3>
+                <i class="fas fa-tools"></i>
+              </div>
+              <div class="skill-items">
+                <div class="skill-item">
+                  <div class="skill-icon">
+                    <i class="fab fa-git-alt"></i>
+                  </div>
+                  <div class="skill-info">
+                    <span class="skill-name">Git</span>
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-width="95%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon">
+                    <i class="fab fa-docker"></i>
+                  </div>
+                  <div class="skill-info">
+                    <span class="skill-name">Docker</span>
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-width="75%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon">
+                    <i class="fab fa-aws"></i>
+                  </div>
+                  <div class="skill-info">
+                    <span class="skill-name">AWS</span>
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-width="70%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon">
+                    <i class="fas fa-code"></i>
+                  </div>
+                  <div class="skill-info">
+                    <span class="skill-name">VS Code</span>
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-width="100%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="projects">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">My Work</span>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">A showcase of my recent work and achievements</p>
+          </div>
+          <div class="projects-grid">
+            <div class="project-card featured">
+              <div class="project-image">
+                <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600" alt="E-commerce Platform">
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                    <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                  </div>
+                </div>
+                <div class="project-badge">Featured</div>
+              </div>
+              <div class="project-content">
+                <h3>E-commerce Platform</h3>
+                <p>A full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">MongoDB</span>
+                  <span class="tech-tag">Stripe</span>
+                </div>
+                <div class="project-stats">
+                  <div class="stat">
+                    <i class="fas fa-users"></i>
+                    <span>10K+ Users</span>
+                  </div>
+                  <div class="stat">
+                    <i class="fas fa-star"></i>
+                    <span>4.9 Rating</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-image">
+                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Task Management App">
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                    <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3>Task Management App</h3>
+                <p>A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">Vue.js</span>
+                  <span class="tech-tag">Socket.io</span>
+                  <span class="tech-tag">Express</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-image">
+                <img src="https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Weather Dashboard">
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                    <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3>Weather Dashboard</h3>
+                <p>A beautiful weather application with location-based forecasts, interactive maps, and detailed weather analytics with stunning visualizations.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">API</span>
+                  <span class="tech-tag">Chart.js</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Achievements Section -->
+      <section id="achievements" class="achievements">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Recognition</span>
+            <h2 class="section-title">Achievements & Awards</h2>
+            <p class="section-subtitle">Milestones and recognition in my development journey</p>
+          </div>
+          <div class="achievements-grid">
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-trophy"></i>
+              </div>
+              <div class="achievement-content">
+                <h3>Best Developer Award 2023</h3>
+                <p>Recognized as the top developer at TechCorp for outstanding performance and innovation in web development projects.</p>
+                <div class="achievement-meta">
+                  <span class="achievement-date">December 2023</span>
+                  <span class="achievement-org">TechCorp Inc.</span>
+                </div>
+              </div>
+            </div>
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-medal"></i>
+              </div>
+              <div class="achievement-content">
+                <h3>Hackathon Winner</h3>
+                <p>First place winner at the Global Web Development Hackathon with an innovative e-learning platform solution.</p>
+                <div class="achievement-meta">
+                  <span class="achievement-date">August 2023</span>
+                  <span class="achievement-org">DevCon Global</span>
+                </div>
+              </div>
+            </div>
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <div class="achievement-content">
+                <h3>AWS Certified Developer</h3>
+                <p>Successfully obtained AWS Certified Developer Associate certification, demonstrating expertise in cloud development.</p>
+                <div class="achievement-meta">
+                  <span class="achievement-date">March 2023</span>
+                  <span class="achievement-org">Amazon Web Services</span>
+                </div>
+              </div>
+            </div>
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="achievement-content">
+                <h3>5-Star Client Rating</h3>
+                <p>Maintained a perfect 5-star rating across 30+ freelance projects with 100% client satisfaction rate.</p>
+                <div class="achievement-meta">
+                  <span class="achievement-date">Ongoing</span>
+                  <span class="achievement-org">Freelance Platforms</span>
+                </div>
+              </div>
+            </div>
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-code-branch"></i>
+              </div>
+              <div class="achievement-content">
+                <h3>Open Source Contributor</h3>
+                <p>Active contributor to major open source projects with 500+ commits and 50+ pull requests merged.</p>
+                <div class="achievement-meta">
+                  <span class="achievement-date">2022-Present</span>
+                  <span class="achievement-org">GitHub Community</span>
+                </div>
+              </div>
+            </div>
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="achievement-content">
+                <h3>Computer Science Degree</h3>
+                <p>Bachelor's degree in Computer Science with Magna Cum Laude honors and specialization in web technologies.</p>
+                <div class="achievement-meta">
+                  <span class="achievement-date">2019</span>
+                  <span class="achievement-org">Tech University</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Resume Section -->
+      <section id="resume" class="resume">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">My Journey</span>
+            <h2 class="section-title">Resume & Experience</h2>
+            <p class="section-subtitle">A detailed look at my professional experience and education</p>
+          </div>
+          <div class="resume-content">
+            <div class="resume-sidebar">
+              <div class="resume-card">
+                <div class="resume-header">
+                  <div class="resume-avatar">
+                    <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Mahriya Hasan Momo">
+                  </div>
+                  <h3>Mahriya Hasan Momo</h3>
+                  <p>Full Stack Developer</p>
+                </div>
+                <div class="resume-info">
+                  <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>alex.johnson@email.com</span>
+                  </div>
+                  <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+1 (555) 123-4567</span>
+                  </div>
+                  <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>San Francisco, CA</span>
+                  </div>
+                  <div class="info-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>linkedin.com/in/alexjohnson</span>
+                  </div>
+                </div>
+                <a href="#" class="btn btn-primary download-btn">
+                  <i class="fas fa-download"></i>
+                  <span>Download PDF</span>
+                </a>
+              </div>
+            </div>
+            <div class="resume-main">
+              <div class="resume-section">
+                <h3 class="resume-section-title">
+                  <i class="fas fa-briefcase"></i>
+                  Work Experience
+                </h3>
+                <div class="timeline">
+                  <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                      <h4>Senior Full Stack Developer</h4>
+                      <div class="timeline-meta">
+                        <span class="company">TechCorp Inc.</span>
+                        <span class="duration">2022 - Present</span>
+                      </div>
+                      <p>Leading development of enterprise web applications using React, Node.js, and AWS. Mentoring junior developers and implementing best practices.</p>
+                      <ul>
+                        <li>Increased application performance by 40% through optimization</li>
+                        <li>Led a team of 5 developers on major product releases</li>
+                        <li>Implemented CI/CD pipelines reducing deployment time by 60%</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                      <h4>Full Stack Developer</h4>
+                      <div class="timeline-meta">
+                        <span class="company">StartupXYZ</span>
+                        <span class="duration">2020 - 2022</span>
+                      </div>
+                      <p>Developed and maintained multiple web applications using modern JavaScript frameworks and cloud technologies.</p>
+                      <ul>
+                        <li>Built responsive web applications serving 10K+ users</li>
+                        <li>Integrated third-party APIs and payment systems</li>
+                        <li>Collaborated with design team to implement pixel-perfect UIs</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                      <h4>Frontend Developer</h4>
+                      <div class="timeline-meta">
+                        <span class="company">WebSolutions Ltd.</span>
+                        <span class="duration">2019 - 2020</span>
+                      </div>
+                      <p>Specialized in creating interactive user interfaces and optimizing web performance for client projects.</p>
+                      <ul>
+                        <li>Developed 20+ responsive websites for various clients</li>
+                        <li>Improved website loading speeds by 50% on average</li>
+                        <li>Implemented modern CSS frameworks and animations</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="resume-section">
+                <h3 class="resume-section-title">
+                  <i class="fas fa-graduation-cap"></i>
+                  Education
+                </h3>
+                <div class="timeline">
+                  <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                      <h4>Bachelor of Science in Computer Science</h4>
+                      <div class="timeline-meta">
+                        <span class="company">Tech University</span>
+                        <span class="duration">2015 - 2019</span>
+                      </div>
+                      <p>Graduated Magna Cum Laude with specialization in Web Technologies and Software Engineering.</p>
+                      <ul>
+                        <li>GPA: 3.8/4.0</li>
+                        <li>Dean's List for 6 consecutive semesters</li>
+                        <li>President of Computer Science Student Association</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Get In Touch</span>
+            <h2 class="section-title">Let's Work Together</h2>
+            <p class="section-subtitle">Ready to bring your ideas to life? Let's start a conversation</p>
+          </div>
+          <div class="contact-content">
+            <div class="contact-info">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Email</h4>
+                  <p>alex.johnson@email.com</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Phone</h4>
+                  <p>+1 (555) 123-4567</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Location</h4>
+                  <p>San Francisco, CA</p>
+                </div>
+              </div>
+              <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+            <form class="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="text" id="name" name="name" placeholder="" required>
+                  <label for="name">Your inn moName</label>
+                </div>
+                <div class="form-group">
+                  <input type="email" id="email" name="email" placeholder="" required>
+                  <label for="email">Your Email</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" id="subject" name="subject" placeholder="" required>
+                <label for="subject">Subject</label>
+              </div>
+              <div class="form-group">
+                <textarea id="message" name="message" placeholder="" rows="5" required></textarea>
+                <label for="message">Your Message</label>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                <span>Send Message</span>
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-main">
+              <div class="footer-brand">
+                <h3>Mahriya Hasan Momo</h3>
+                <p>Full Stack Developer passionate about creating exceptional digital experiences.</p>
+              </div>
+              <div class="footer-links">
+                <div class="footer-section">
+                  <h4>Quick Links</h4>
+                  <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills"></a>Skills</li>
+                    <li><a href="#contact">Contact</a></li>
+                  </ul>
+                </div>
+                <div class="footer-section">
+                  <h4>Services</h4>
+                  <ul>
+                    <li><a href="#features">Web Development</a></li>
+                    <li><a href="#features">Mobile Design</a></li>
+                    <li><a href="#features">Performance Optimization</a></li>
+                    <li><a href="#resume">Consulting</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer-bottom">
+              <p>&copy; 2024 Mahriya Hasan Momo. All rights reserved.</p>
+              <p>Crafted with <i class="fas fa-heart"></i> and lots of coffee</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
+
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="#" class="nav-logo">
+      <span>AJ</span>
+      <small>Developer</small>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <button class="menu-btn" id="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <button class="theme-btn" id="nav-theme-toggle" aria-label="Toggle theme">
+        <div class="toggle-track">
+          <div class="toggle-thumb">
+            <span class="sun-icon">☀️</span>
+            <span class="moon-icon">🌙</span>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+</nav>
