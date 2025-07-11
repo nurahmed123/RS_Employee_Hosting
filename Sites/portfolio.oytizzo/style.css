@@ -2149,3 +2149,9 @@ section {
     transform: translateY(0);
   }
 }
+
+.feature-image {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 8px;
+}
