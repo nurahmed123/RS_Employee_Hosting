@@ -63,7 +63,7 @@ if (typewriterElement) {
     'Student Leader',
 'Content Coordinator',
 'Event Organizer',
-'Public Speaking Enthusiast'
+'Public Speaker'
   ];
   let phraseIndex = 0;
   let charIndex = 0;
