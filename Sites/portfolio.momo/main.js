@@ -60,10 +60,10 @@ if (mobileThemeToggle) {
 const typewriterElement = document.getElementById('typewriter');
 if (typewriterElement) {
   const phrases = [
-    'Web Developer',
-    'React Enthusiast',
-    'UI/UX Designer',
-    'Open Source Contributor'
+    'Student Leader',
+'Content Coordinator',
+'Event Organizer',
+'Public Speaking Enthusiast'
   ];
   let phraseIndex = 0;
   let charIndex = 0;
