@@ -1,12 +1,17 @@
-# React + Vite
+# Recreation of Award-winning Bokoko33's Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**[Live demo](https://abigail-bloom-portolio-bokoko33.vercel.app/)**
 
-Currently, two official plugins are available:
+This repo contains code of a recreation of **[Bokoko33's award-winning website](https://bokoko33.me/)**. The original creator asks to please not use this _exact_ idea,
+but feel free to use it as a starting point/inspiration.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Home page screenshot](public/social/screenshot.png?raw=true "Home page screenshot")
 
-## Expanding the ESLint configuration
+## Instructions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+npm install
+npm run dev
+```
+
+You can use the "network" dev server running and open it on your phone if your computer is connected to the same internet.
