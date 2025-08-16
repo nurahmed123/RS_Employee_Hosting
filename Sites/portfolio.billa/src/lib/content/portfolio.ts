@@ -17,26 +17,26 @@ export const socialLinks: StringKeyValueType = {
 };
 
 export const author = {
-  name: 'Mottasim Billa',
-  email: 'mottasimbilla@robosuperior.com',
+  name: 'Mahdi Bin Ferdaus',
+  email: 'ibnemahdi5@gmail.com',
 };
 
 export const seoData = {
-  title: 'Mottasim Billa | Hardware Engineer & Developer',
+  title: 'Mahdi Bin Ferdaus | Hardware Engineer & Developer',
   description:
-    'Mottasim Billa is a hardware engineer and developer who specializes in building innovative solutions at the intersection of hardware and software.',
+    'Mahdi Bin Ferdaus is a hardware engineer and developer who specializes in building innovative solutions at the intersection of hardware and software.',
   author: author.name,
   image:
     'https://user-images.githubusercontent.com/68834718/217467445-0b0d2d63-f8ad-4702-8474-814eb2cbb3be.png',
   url: 'https://nadimshahriar.vercel.app/',
   keywords: [
     'Nadim',
-    'Mottasim Billa',
+    'Mahdi Bin Ferdaus',
     'Hardware Engineer',
     'Developer',
     'Bangladesh',
     'Portfolio',
     'Nadim Portfolio',
-    'Mottasim Billa Portfolio',
+    'Mahdi Bin Ferdaus Portfolio',
   ],
 };
