@@ -1,0 +1,1 @@
+"use strict";exports.id=300,exports.ids=[300],exports.modules={300:(s,d,e)=>{e.r(d),e.d(d,{default:()=>t});var a=e(80),r=e(5153);let t=({path:s,className:d=""})=>a.jsx("div",{className:`max-w-sm md:max-w-md ${d}`,children:a.jsx(r.J5,{autoplay:!0,loop:!0,src:s})})}};

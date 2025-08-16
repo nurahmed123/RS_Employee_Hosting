@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[274],{7274:function(a,s,e){e.r(s);var c=e(7437),l=e(9564);s.default=a=>{let{path:s,className:e=""}=a;return(0,c.jsx)("div",{className:"max-w-sm md:max-w-md ".concat(e),children:(0,c.jsx)(l.J5,{autoplay:!0,loop:!0,src:s})})}}}]);
