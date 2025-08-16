@@ -10,6 +10,7 @@
     "lint:fix": "eslint src --fix && yarn format",
     "prepare": "husky install"
   },
+  "homepage": ".",
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.5.0",
     "clsx": "^2.0.0",
