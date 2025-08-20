@@ -60,11 +60,16 @@ if (mobileThemeToggle) {
 const typewriterElement = document.getElementById('typewriter');
 if (typewriterElement) {
   const phrases = [
-    'Web Developer',
-    'React Enthusiast',
-    'UI/UX Designer',
-    'Open Source Contributor'
+    'Debating',
+    'Speaking',
+    'Leadership',
+    'Teamwork',
+    'Events',
+    'Sports',
+    'Discipline',
+    'Creativity'
   ];
+  
   let phraseIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
