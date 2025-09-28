@@ -179,8 +179,8 @@ const FeaturedProject = ({
               tasks / achievements
             </div>
             <div className="mb-2 space-y-1">
-              {tasks?.split(',').map((task) => (
-                <div key={task.slice(0, 10)}>{task}</div>
+              {tasks?.split(',').map((task, index) => (
+                <div key={index}>{task}</div>
               ))}
             </div>
           </div>

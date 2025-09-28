@@ -7,13 +7,13 @@ export const aboutSection: AboutSectionType = {
   list: {
     title: 'Here are a few technologies and skills I work with:',
     items: [
-      'Microcontrollers',
-      'Robotics',
-      'Sensor Systems',
+      'Web Development',
+      'Python Programming',
+      'Research & Prototyping',
+      'Arduino & IoT',
+      'AI & Machine Learning',
       'Circuit Design',
-      'AI/ML',
-      'CAD Modeling',
     ],
   },
-  img: '/vatsal-singh.png', // Will need to be replaced with appropriate image
+  img: 'https://files.edgestore.dev/iz2sept3369gmc0f/publicFiles/_public/e5538bbd-f11e-4cf9-b16f-c7c638f9ad6f.jpeg',
 };

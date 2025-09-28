@@ -7,7 +7,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "next lint",
-    "lint:fix": "eslint src --fix && yarn format",
+    "lint:fix": "eslint src --fix && npm run format",
     "prepare": "husky install"
   },
   "homepage": ".",

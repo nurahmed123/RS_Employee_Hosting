@@ -1,67 +1,63 @@
 import { FeaturedProjectsSectionType } from '@/lib/types/sections';
-import { getId } from '@/lib/utils/helper';
 
 const featuredProjectsSection: FeaturedProjectsSectionType = {
   title: "projects i've worked on",
   projects: [
     {
-      id: getId(),
-      name: 'GetLifeGuard',
-      description: 'An E-Commerce platform for Self-Defense Keychain.',
+      id: 'econanofilter',
+      name: 'EcoNanoFilter',
+      description: 'A sustainable Plant-Based Nanocellulose Membrane for Affordable Pathogen Removal in Contaminated Water',
       tasks:
-        "As a freelancer, I understood the client's requirements and executed a plan to develop and design an e-commerce platform, including the frontend UI, backend setup with database, APIs, and integration with payment platforms.",
-      url: 'https://life-kit.vercel.app/',
-      img: 'https://life-kit.vercel.app/images/og.png',
+        'Conducted comprehensive research on sustainable water filtration solutions, developed innovative nanocellulose membrane technology, and created a cost-effective solution for pathogen removal in contaminated water sources.',
+      url: '#',
+      img: 'https://images.unsplash.com/photo-1576086213369-97a306d36557',
       tags: [
-        'NextJs 14',
-        'TypeScript',
-        'TailwindCSS',
-        'ShadCN',
-        'Prisma',
-        'Stripe',
+        'Research',
+        'Sustainability',
+        'Water Treatment',
+        'Nanotechnology',
+        'Healthcare',
       ],
     },
     {
       id: getId(),
-      name: 'Valuemetrix',
-      description: 'An AI Powered Investment Platform.',
+      name: 'Protirodh Biokit',
+      description: 'An Affordable Multi-Disease Detection and Health Monitoring System for Rural Bangladesh',
       tasks:
-        'I strategically planned project milestones, led a cross-functional team, established a design system, developed the website, and integrated Stripe payments with secure authentication.',
-      url: 'https://www.valuemetrix.io/',
-      img: 'https://www.valuemetrix.io/images/og.png',
-      tags: ['AI/ML', 'NextJs', 'TypeScript', 'TailwindCSS', 'Prisma'],
+        'Designed and developed a comprehensive healthcare solution for rural areas, integrated multiple disease detection capabilities, and created an affordable monitoring system to improve healthcare accessibility.',
+      url: '#',
+      img: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56',
+      tags: ['Healthcare', 'IoT', 'Medical Devices', 'Rural Technology', 'Bangladesh'],
     },
     {
       id: getId(),
-      name: 'Velvi Matrimony',
-      description:
-        'A platform that redefines the way individuals find their life partners.',
+      name: 'Floating Seedbed Desalination & Farming System',
+      description: 'An integrated Farming system for the Flood prone area in South Asian Country',
       tasks:
-        'As a freelancer, I developed this project by planning, communicating with the client, gathering feedback, implementing UI & pages, and integrating real-time data fetching with filtering functionality.',
-      url: 'https://velvi.vercel.app/',
-      img: 'https://i.postimg.cc/tRS4GvzJ/Screenshot-2024-02-27-at-5-48-49-PM.png',
-      tags: ['NextJs', 'TypeScript', 'TailwindCSS', 'APIs'],
+        'Developed an innovative agricultural solution for flood-prone regions, integrated desalination technology with farming systems, and created sustainable food production methods for challenging environments.',
+      url: '#',
+      img: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b',
+      tags: ['Agriculture', 'Sustainability', 'Desalination', 'Climate Resilience', 'Innovation'],
     },
-    /*   {
-      id: getId(),
-      name: 'Integra',
-      description: 'An AI-Powered Leads Generation Platform.',
-      tasks:
-        'I strategically planned project milestones, led a cross-functional team, established a design system, developed the website, and integrated Stripe payments with secure authentication.',
-      url: 'https://www.integraleads.xyz/',
-      img: 'https://user-images.githubusercontent.com/68834718/279476369-2f69466a-71db-4da0-9afd-04f8f0efb621.jpeg',
-      tags: ['AI/ML', 'NextJs', 'TypeScript', 'TailwindCSS', 'Express'],
-    }, */
-
     {
       id: getId(),
-      name: 'Drafton',
-      description: 'The AI-powered platform that simplifies proposal creation.',
+      name: 'Aviation Energy System',
+      description: 'A multi source energy integration system for aerospace applications',
       tasks:
-        'I designed and developed the landing page and implemented the dashboard by creating a user interface and integrating APIs.',
-      url: 'https://www.drafton.io/',
-      img: 'https://i.postimg.cc/4N6dsGcm/Screenshot-2024-06-17-at-11-05-22-PM.png',
-      tags: ['Open AI', 'NextJs', 'TypeScript', 'TailwindCSS', 'Prisma'],
+        'Researched and developed advanced energy integration systems for aviation, created multi-source energy solutions, and designed systems to improve aircraft efficiency and sustainability.',
+      url: '#',
+      img: 'https://images.unsplash.com/photo-1540962351504-03099e0a754b',
+      tags: ['Aerospace', 'Energy Systems', 'Aviation', 'Renewable Energy', 'Engineering'],
+    },
+    {
+      id: getId(),
+      name: 'Hydrogen Propulsion System',
+      description: 'Advanced Hydrogen Propulsion and Combustion System for sustainable transportation',
+      tasks:
+        'Designed and prototyped hydrogen-powered propulsion systems, developed combustion optimization techniques, and created sustainable transportation solutions for the future.',
+      url: '#',
+      img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80',
+      tags: ['Hydrogen', 'Propulsion', 'Sustainable Energy', 'Transportation', 'Clean Technology'],
     },
   ],
 };

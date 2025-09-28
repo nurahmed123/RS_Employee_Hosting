@@ -38,6 +38,11 @@ module.exports = {
         hostname: 'buttons-animations-kv.vercel.app',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'files.edgestore.dev',
+        pathname: '/**',
+      },
     ],
   },
 };

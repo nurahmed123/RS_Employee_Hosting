@@ -7,36 +7,40 @@
 import { StringKeyValueType } from '../types';
 
 export const socialLinks: StringKeyValueType = {
-  facebook: 'https://www.facebook.com/mahdibinferdaus',
-  instagram: 'https://www.instagram.com/mahdibinferdaus/',
-  twitter: 'https://x.com/mahdi_tech_',
-  github: 'https://github.com/mahdibinferdaus',
-  linkedin: 'https://www.linkedin.com/in/mahdibinferdaus/',
-  youtube: 'https://www.youtube.com/@MahdiTheTechGuy',
-  linktree: 'https://linktr.ee/mahdibin',
+  facebook: '#facebook',
+  instagram: '#instagram',
+  twitter: 'https://x.com/XEMON85222',
+  github: '#github',
+  linkedin: '#linkedin',
+  youtube: '#youtube',
+  linktree: '#linktree',
 };
 
 export const author = {
-  name: 'Mahdi Bin Ferdaus',
-  email: 'ibnemahdi5@gmail.com',
+  name: 'K M Faisal Shahriar',
+  email: 'kmfaisalshahriar@gmail.com',
 };
 
 export const seoData = {
-  title: 'Mahdi Bin Ferdaus | Hardware Engineer & Developer',
+  title: 'K M Faisal Shahriar | Developer & Researcher',
   description:
-    'Mahdi Bin Ferdaus is a hardware engineer and developer who specializes in building innovative solutions at the intersection of hardware and software.',
+    'K M Faisal Shahriar is a developer and researcher based in Bangladesh, passionate about innovation and technology across Aerospace, AI, Military, Healthcare, and Sustainable energy.',
   author: author.name,
   image:
-    'https://user-images.githubusercontent.com/68834718/217467445-0b0d2d63-f8ad-4702-8474-814eb2cbb3be.png',
+    'https://files.edgestore.dev/iz2sept3369gmc0f/publicFiles/_public/e5538bbd-f11e-4cf9-b16f-c7c638f9ad6f.jpeg',
   url: 'https://nadimshahriar.vercel.app/',
   keywords: [
-    'Nadim',
-    'Mahdi Bin Ferdaus',
-    'Hardware Engineer',
+    'Faisal',
+    'K M Faisal Shahriar',
     'Developer',
+    'Researcher',
     'Bangladesh',
     'Portfolio',
-    'Nadim Portfolio',
-    'Mahdi Bin Ferdaus Portfolio',
+    'Faisal Portfolio',
+    'K M Faisal Shahriar Portfolio',
+    'Aerospace',
+    'AI',
+    'Healthcare',
+    'Sustainable Energy',
   ],
 };

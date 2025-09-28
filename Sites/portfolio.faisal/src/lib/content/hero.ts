@@ -3,11 +3,11 @@ import { resumeFileName } from '@/lib/utils/config';
 
 export const heroSection: HeroSectionType = {
   subtitle: 'Hi, my name is',
-  title: 'Mahdi Bin Ferdaus.',
-  tagline: 'I build at the intersection of hardware and thought.',
+  title: 'K M Faisal Shahriar.',
+  tagline: 'I build at the intersection of innovation and impact.',
   description:
-    "If a wire can dream, does it dream in copper or in light? When failure knocks, is it a wall… or the blueprint for a door? I live somewhere between the pulse of machines and the silence that teaches them.",
-  specialText: 'Where machines learn and the human hand still leaves its mark',
+    "I'm Faisal, a developer and researcher based in Bangladesh, passionate about innovation and technology. I work across areas like Aerospace, AI, Military, Healthcare, and Sustainable energy, always exploring ways to turn ideas into impactful prototypes.",
+  specialText: 'Where technology meets purpose and ideas become reality',
   cta: {
     title: 'see my resume',
     url: `/${resumeFileName}`,

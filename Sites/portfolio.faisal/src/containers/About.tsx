@@ -27,13 +27,13 @@ const About = () => {
             I was born in the quiet heart of Bangladesh, where the hum of village life and the whisper of monsoon rains shaped my earliest curiosities. My world began in Tangail, wandered through Natore, and was always tethered to the ancestral soil of Chapainawabganj and Rajshahi.
           </p>
           <p>
-            What began as a child's wonder grew into an unyielding craft. I learned to make ideas breathe—whether in the form of a robot that thinks, a sensor that listens to the wind, or a code that can see patterns where humans cannot. My projects have carried me from local science fairs to international stages, from setbacks that taught me resilience to moments where the work spoke louder than any introduction.
+            With hands-on experience in both research and development, I focus on building solutions that not only push boundaries but also make a real difference. My goal is to create technologies that inspire, solve problems, and shape a better future.
           </p>
           <p>
-            I work at the meeting point of hardware and thought, where machines learn and the human hand still leaves its mark. My tools are not only soldering irons, microcontrollers, and CAD models, but also the long nights of iteration, the discipline of failure, and the belief that technology can be both precise and poetic.
+            I work across areas like Aerospace, AI, Military, Healthcare, and Sustainable energy, always exploring ways to turn ideas into impactful prototypes. From hydrogen-powered engines to healthcare bio-kits, I'm passionate about innovation that addresses global challenges.
           </p>
           <p>
-            I build not just to solve problems, but to ask new questions—of the world, and of myself.
+            I build not just to solve problems, but to create meaningful impact—for communities, for the future, and for the world we share.
           </p>
 
           {list && (
