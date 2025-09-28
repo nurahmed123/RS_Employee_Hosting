@@ -20,7 +20,7 @@ const featuredProjectsSection: FeaturedProjectsSectionType = {
       ],
     },
     {
-      id: getId(),
+      id: 'protirodh-biokit',
       name: 'Protirodh Biokit',
       description: 'An Affordable Multi-Disease Detection and Health Monitoring System for Rural Bangladesh',
       tasks:
@@ -30,7 +30,7 @@ const featuredProjectsSection: FeaturedProjectsSectionType = {
       tags: ['Healthcare', 'IoT', 'Medical Devices', 'Rural Technology', 'Bangladesh'],
     },
     {
-      id: getId(),
+      id: 'floating-seedbed',
       name: 'Floating Seedbed Desalination & Farming System',
       description: 'An integrated Farming system for the Flood prone area in South Asian Country',
       tasks:
@@ -40,7 +40,7 @@ const featuredProjectsSection: FeaturedProjectsSectionType = {
       tags: ['Agriculture', 'Sustainability', 'Desalination', 'Climate Resilience', 'Innovation'],
     },
     {
-      id: getId(),
+      id: 'aviation-energy',
       name: 'Aviation Energy System',
       description: 'A multi source energy integration system for aerospace applications',
       tasks:
@@ -50,7 +50,7 @@ const featuredProjectsSection: FeaturedProjectsSectionType = {
       tags: ['Aerospace', 'Energy Systems', 'Aviation', 'Renewable Energy', 'Engineering'],
     },
     {
-      id: getId(),
+      id: 'hydrogen-propulsion',
       name: 'Hydrogen Propulsion System',
       description: 'Advanced Hydrogen Propulsion and Combustion System for sustainable transportation',
       tasks:

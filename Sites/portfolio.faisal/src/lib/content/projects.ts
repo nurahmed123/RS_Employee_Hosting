@@ -1,11 +1,10 @@
 import { ProjectsSectionType } from '@/lib/types/sections';
-import { getId } from '@/lib/utils/helper';
 
 export const projectsSection: ProjectsSectionType = {
   title: 'my projects & achievements',
   projects: [
     {
-      id: getId(),
+      id: 'multi-task-fire-bot',
       name: 'Multi Task Fire Bot',
       url: '#',
       repo: '#',
@@ -14,7 +13,7 @@ export const projectsSection: ProjectsSectionType = {
       tags: ['Robotics', 'Fire Safety', 'Automation'],
     },
     {
-      id: getId(),
+      id: 'hydrogen-propulsion-combustion',
       name: 'Hydrogen Propulsion and Combustion System',
       url: '#',
       repo: '#',
@@ -23,7 +22,7 @@ export const projectsSection: ProjectsSectionType = {
       tags: ['Aerospace', 'Hydrogen', 'Propulsion'],
     },
     {
-      id: getId(),
+      id: 'xaziuo-cyber-security',
       name: 'Xaziuo: Cyber Security Module',
       url: '#',
       repo: '#',
@@ -32,7 +31,7 @@ export const projectsSection: ProjectsSectionType = {
       tags: ['Cybersecurity', 'Software', 'Protection'],
     },
     {
-      id: getId(),
+      id: 'electromagnetic-pulsar',
       name: 'Electro Magnetic Pulsar System',
       url: '#',
       repo: '#',
@@ -41,7 +40,7 @@ export const projectsSection: ProjectsSectionType = {
       tags: ['Electronics', 'Electromagnetic', 'Systems'],
     },
     {
-      id: getId(),
+      id: '360-radar-sensing',
       name: '360 Radar Sensing System',
       url: '#',
       repo: '#',
@@ -50,7 +49,7 @@ export const projectsSection: ProjectsSectionType = {
       tags: ['Radar', 'Sensing', 'Detection'],
     },
     {
-      id: getId(),
+      id: 'military-surveillance-bot',
       name: 'Military Surveillance and Defence Bot',
       url: '#',
       repo: '#',
@@ -59,7 +58,7 @@ export const projectsSection: ProjectsSectionType = {
       tags: ['Military', 'Surveillance', 'Defense'],
     },
     {
-      id: getId(),
+      id: 'econanofilter-water',
       name: 'EcoNanoFilter Water Purification',
       url: '#',
       repo: '#',
@@ -68,7 +67,7 @@ export const projectsSection: ProjectsSectionType = {
       tags: ['Research', 'Water', 'Nanotechnology'],
     },
     {
-      id: getId(),
+      id: 'protirodh-biokit-health',
       name: 'Protirodh Biokit Health System',
       url: '#',
       repo: '#',
@@ -77,7 +76,7 @@ export const projectsSection: ProjectsSectionType = {
       tags: ['Healthcare', 'Biokit', 'Rural Health'],
     },
     {
-      id: getId(),
+      id: 'floating-seedbed-desalination',
       name: 'Floating Seedbed Desalination System',
       url: '#',
       repo: '#',
@@ -86,7 +85,7 @@ export const projectsSection: ProjectsSectionType = {
       tags: ['Agriculture', 'Desalination', 'Sustainability'],
     },
     {
-      id: getId(),
+      id: 'aviation-energy-integration',
       name: 'Aviation Energy System',
       url: '#',
       repo: '#',
@@ -95,7 +94,7 @@ export const projectsSection: ProjectsSectionType = {
       tags: ['Aviation', 'Energy', 'Integration'],
     },
     {
-      id: getId(),
+      id: 'mhd-engine-underwater',
       name: 'MHD Engine for Underwater Vehicles',
       url: '#',
       repo: '#',

@@ -1,11 +1,10 @@
 import { SkillsSectionType } from '@/lib/types/sections';
-import { getId } from '@/lib/utils/helper';
 
 export const skillsSection: SkillsSectionType = {
   title: 'what i do',
   skills: [
     {
-      id: getId(),
+      id: 'research-development',
       title: 'web development',
       // animation lottie file: https://lottiefiles.com/
       lottie: {
@@ -30,26 +29,7 @@ export const skillsSection: SkillsSectionType = {
       ],
     },
     {
-      id: getId(),
-      title: 'research & prototyping',
-      lottie: {
-        light: '/lotties/designing.json',
-        dark: '/lotties/designing-dark.json',
-      },
-      points: [
-        'Conducting innovative research in aerospace, AI, and sustainable technologies',
-        'Developing prototypes for hydrogen-powered engines and healthcare bio-kits',
-        'Creating solutions for global challenges in energy, healthcare, and climate resilience',
-      ],
-      softwareSkills: [
-        { name: 'research', icon: 'carbon:research' },
-        { name: 'prototyping', icon: 'carbon:prototype' },
-        { name: 'innovation', icon: 'carbon:innovation' },
-        { name: 'analysis', icon: 'carbon:data-vis-4' },
-      ],
-    },
-    {
-      id: getId(),
+      id: 'arduino-iot',
       title: 'arduino & IoT',
       lottie: {
         light: '/lotties/coding.json',
@@ -70,7 +50,7 @@ export const skillsSection: SkillsSectionType = {
       ],
     },
     {
-      id: getId(),
+      id: 'ai-machine-learning',
       title: 'AI & machine learning',
       lottie: {
         light: '/lotties/fullstack.json',
