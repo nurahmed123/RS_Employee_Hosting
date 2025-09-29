@@ -1,1 +1,0 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/nadim_shahriar_apurbo/Documents/GitHub/RS_Employee_Hosting/Sites/portfolio.faisal/src/app/layout\":[\"static/media/e4af272ccee01ff0-s.p.woff2\",\"static/media/739c2d8941231bb4-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
